@@ -10,14 +10,14 @@ public class DecisionManager : MonoBehaviour
     private enum DECISIONS
     {
 
-    }    
+    }
 
-    [SerializeField] private List<DecisionClass> DecisionClasses;
-    [SerializeField] private Dictionary<string, DecisionClass> DecisionDictionary;
+    private List<DecisionClass> DecisionClasses;
+    private Dictionary<string, DecisionClass> DecisionDictionary;
 
     private void Awake()
     {
-        if(main == null)
+        if (main == null)
         {
             main = this;
         }
@@ -32,7 +32,7 @@ public class DecisionManager : MonoBehaviour
     {
         DecisionDictionary = new Dictionary<string, DecisionClass>();
 
-        foreach(var decision in DecisionClasses)
+        foreach (var decision in DecisionClasses)
         {
             DecisionDictionary.Add(decision.name, decision);
         }

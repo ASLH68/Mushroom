@@ -12,8 +12,8 @@ using UnityEngine;
 [System.Serializable]
 public class DecisionClass : MonoBehaviour
 {
-    protected new string name;
-    protected new int weight;
-    protected new List<string> Choices;   
-    protected new int choiceMade;
+    [SerializeField] protected new string name;
+    [SerializeField] protected new int weight;
+    [SerializeField] protected new List<string> Choices;
+    [SerializeField] protected new int choiceMade;
 }
