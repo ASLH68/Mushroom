@@ -10,10 +10,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class DecisionClass : MonoBehaviour
+public class DecisionClass
 {
-    [SerializeField] protected new string name;
-    [SerializeField] protected new int weight;
-    [SerializeField] protected new List<string> Choices;
-    [SerializeField] protected new int choiceMade;
+    [SerializeField] private string name;
+    [SerializeField] private int weight;
+    [SerializeField] private List<string> Choices;
+    [SerializeField] private int choiceMade;
+
+    public string Name => name;
+    public int Weight => weight;
+       
+    public int ChoiceMade => choiceMade;
 }

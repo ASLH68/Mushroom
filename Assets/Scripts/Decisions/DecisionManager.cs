@@ -12,7 +12,7 @@ public class DecisionManager : MonoBehaviour
 
     }
 
-    private List<DecisionClass> DecisionClasses;
+    [SerializeField] private List<DecisionClass> DecisionClasses;
     private Dictionary<string, DecisionClass> DecisionDictionary;
 
     private void Awake()
@@ -34,7 +34,7 @@ public class DecisionManager : MonoBehaviour
 
         foreach (var decision in DecisionClasses)
         {
-            DecisionDictionary.Add(decision.name, decision);
+            DecisionDictionary.Add(decision.Name, decision);
         }
     }
 }
