@@ -12,13 +12,13 @@ using UnityEngine;
 [System.Serializable]
 public class DecisionClass
 {
-    [SerializeField] private string name;
-    [SerializeField] private int weight;
-    [SerializeField] private List<string> Choices;
-    [SerializeField] private int choiceMade;
+    [SerializeField] private string _name;
+    [SerializeField] private int _weight;
+    [SerializeField] private List<string> _choices;
+    [SerializeField] private int _choiceMade;
 
-    public string Name => name;
-    public int Weight => weight;
+    public string Name => _name;
+    public int Weight => _weight;
        
-    public int ChoiceMade => choiceMade;
+    public int ChoiceMade => _choiceMade;
 }
