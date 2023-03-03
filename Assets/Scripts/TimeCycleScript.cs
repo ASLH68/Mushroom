@@ -16,11 +16,11 @@ public class TimeCycleScript : MonoBehaviour
     private Light _light;
     private bool _cycleChanging = true;
 
-    private Vector3 _nightCycleStartPos = new Vector3(180f, -30f, 0f);
+    private Vector3 _nightCycleStartPos = new Vector3(195f, -30f, 0f);
     private Vector3 _nightCycleEndPos = new Vector3(360, -30f, 0f);
 
     private Vector3 _dayCycleStartPos = new Vector3(0f, -30f, 0f);
-    private Vector3 _dayCycleEndPos = new Vector3(180f, -30f, 0f);
+    private Vector3 _dayCycleEndPos = new Vector3(195f, -30f, 0f);
 
     private float _cycleLength;
 
