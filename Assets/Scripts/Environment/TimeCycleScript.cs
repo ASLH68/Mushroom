@@ -24,6 +24,9 @@ public class TimeCycleScript : MonoBehaviour
 
     private float _cycleLength;
 
+    // Daily pop up display (added by Peter)
+    [SerializeField] TimedEventPopUp _popUpObject;
+
     private void Awake()
     {
         if (main == null)
