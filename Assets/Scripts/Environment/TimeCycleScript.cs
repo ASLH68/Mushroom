@@ -46,7 +46,7 @@ public class TimeCycleScript : MonoBehaviour
         StartCoroutine("DayCycleController");
     }
 
-    private IEnumerator DayCycleController()
+    public IEnumerator DayCycleController()
     {
         float _cyclePercentage = 0;
 
@@ -59,10 +59,10 @@ public class TimeCycleScript : MonoBehaviour
 
             yield return null;
         }
-        StartCoroutine("NightCycleController");
+        _popUpObject.ActivatePopUp();
     }
 
-    private IEnumerator NightCycleController()
+    public IEnumerator NightCycleController()
     {
         float _cyclePercentage = 0;
 
@@ -75,7 +75,7 @@ public class TimeCycleScript : MonoBehaviour
 
             yield return null;
         }
-        StartCoroutine("DayCycleController");
+        _popUpObject.ActivatePopUp();
     }
 
 }
