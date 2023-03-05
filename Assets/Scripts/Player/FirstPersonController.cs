@@ -11,6 +11,8 @@ namespace StarterAssets
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
+		public static FirstPersonController main;
+
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
@@ -59,6 +61,7 @@ namespace StarterAssets
 		private float _rotationVelocity;
 		private float _verticalVelocity;
 		private float _terminalVelocity = 53.0f;
+		public bool IsControllable = true;
 
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
@@ -88,6 +91,15 @@ namespace StarterAssets
 
 		private void Awake()
 		{
+			if(main == null)
+			{
+				main = this;
+			}
+			else
+			{
+				Destroy(this);
+			}
+
 			// get a reference to our main camera
 			if (_mainCamera == null)
 			{
@@ -112,14 +124,20 @@ namespace StarterAssets
 
 		private void Update()
 		{
-			JumpAndGravity();
-			GroundedCheck();
-			Move();
+			if (IsControllable)
+			{
+				JumpAndGravity();
+				GroundedCheck();
+				Move();
+			}
 		}
 
 		private void LateUpdate()
 		{
-			CameraRotation();
+			if(IsControllable)
+			{
+                CameraRotation();
+            }	
 		}
 
 		private void GroundedCheck()

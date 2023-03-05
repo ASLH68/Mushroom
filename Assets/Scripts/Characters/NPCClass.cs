@@ -24,7 +24,8 @@ public class NPCClass : MonoBehaviour
     {
         if(other.tag.Equals("Player") && _isInteractable)
         {
-            Debug.Log("Player Entered Trigger");
+            DialogueUIController.main.ShowInteractKey();
+            DialogueUIController.main.SetCanTalk(true);
         }
     }
 
@@ -32,7 +33,8 @@ public class NPCClass : MonoBehaviour
     {
         if(other.tag.Equals("Player") && _isInteractable)
         {
-            Debug.Log("Player Exited Trigger");
+            DialogueUIController.main.HideInteractKey();
+            DialogueUIController.main.SetCanTalk(false);
         }
     }
 }
