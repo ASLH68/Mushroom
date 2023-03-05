@@ -1,7 +1,15 @@
+/*****************************************************************************
+// File Name :         DialogueUIController.cs
+// Author :            Andrea Swihart-DeCoster
+// Creation Date :     March 03, 2023
+//
+// Brief Description : This class controls the Dialogue UI
+*****************************************************************************/
 using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,13 +19,22 @@ public class DialogueUIController : MonoBehaviour
 {
     public static DialogueUIController main;
 
+    [SerializeField] private TextMeshProUGUI _npcDialogueText;
+
+    [Header("Panels")]
     [SerializeField] private GameObject _npcDialoguePanel;
     [SerializeField] private GameObject _dialogueOptionPanel;
     [SerializeField] private GameObject _interactKeyDisplay;
 
+    [Header("Button Choices")]
+    [SerializeField] private List<TextMeshProUGUI> _buttonChoices;
+
+    private DecisionClass _currentDecision;
+
     private bool _canTalk;  //whether the play is able to talk to the NPC or not
     public bool CanTalk => CanTalk;
 
+    #region Awake, Start, Update
     private void Awake()
     {
         if(main == null)
@@ -28,38 +45,47 @@ public class DialogueUIController : MonoBehaviour
         {
             Destroy(this);
         }
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        LockCursor();
     }
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.E) && _canTalk)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            UnlockCursor();
             FirstPersonController.main.IsControllable = false;
+
+            HideInteractKey();
+            DisplayDialogue();
+
             _npcDialoguePanel.SetActive(true);
         }
     }
+    #endregion
+
+    /// <summary>
+    /// Sets whether or not the NPC can be interacted with
+    /// </summary>
+    /// <param name="val"></param>
     public void SetCanTalk(bool val)
     {
         _canTalk = val;
     }
 
     /// <summary>
-    /// Activates stuff when the button is pressed
+    /// Locks the cursor, returns control to the character, and disables the
+    /// dialogue UI
     /// </summary>
-    public void ButtonPressed()
+    public void EndDialogue()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        LockCursor();
         FirstPersonController.main.IsControllable = true;
-        _interactKeyDisplay.SetActive(false);
-        _npcDialoguePanel.SetActive(false);
-        _dialogueOptionPanel.SetActive(false);
+        HideInteractKey();
+        HideNPCDialogue();
+        HideDialogueOptions();
     }
 
+    #region Visibility Functions
     /// <summary>
     /// Enables & Disables the interact key display
     /// </summary>
@@ -95,4 +121,88 @@ public class DialogueUIController : MonoBehaviour
     {
         _dialogueOptionPanel.SetActive(false);
     }
+    #endregion
+
+    /// <summary>
+    /// Sets the dialogue text on screen
+    /// </summary>
+    /// <param name="text"></param>
+    public void SetDialogueText(string text)
+    {
+        _npcDialogueText.text = text;
+    }
+
+    /// <summary>
+    /// Displays the dialogue associated with the NPCs emotions in the current conversation
+    /// </summary>
+    private void DisplayDialogue()
+    {
+        NPCClass currentNPC;
+        currentNPC = NPCManager.main.CurrentNPC;
+
+        foreach(NPCDialogue npcDialogue in currentNPC.CurrentConversation)
+        {
+            if(currentNPC.CurrentEmotion.Equals(npcDialogue.CurrentEmotion.ToString()))
+            {
+                SetDialogueText(npcDialogue.Dialogue);
+            }
+        }
+        ShowDialogueOptions();
+        SetOptions();
+    }
+
+    public void OptionSelected(int optionNum)
+    {
+        _currentDecision.SetChoice(optionNum);
+
+        int relativeWeight = _currentDecision.Weight;
+
+        switch(optionNum)
+        {
+            case 2: relativeWeight = 0;
+                break;
+            case 3:
+                relativeWeight = -relativeWeight;
+                break;
+        }
+
+        NPCManager.main.CurrentNPC.SetMood(relativeWeight);
+        EndDialogue();
+    }
+
+    private void SetOptions()
+    {
+        foreach(DecisionClass dec in DecisionManager.main.DecisionList)
+        {
+            if(dec.AssociatedConversation == NPCManager.main.CurrentNPC.ConversationNum)
+            {
+                _currentDecision = dec;
+                for(int i = 0; i < _buttonChoices.Count; i++)
+                {
+                    _buttonChoices[i].text = dec.Choices[i];
+                }
+                break;
+            }
+        }
+    }
+
+    #region Cursor
+    /// <summary>
+    /// Hides and locks the cursor
+    /// </summary>
+    private void LockCursor()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    /// <summary>
+    /// Unhides and unlocks the cursor
+    /// </summary>
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    #endregion
 }

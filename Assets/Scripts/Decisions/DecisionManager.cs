@@ -13,7 +13,9 @@ public class DecisionManager : MonoBehaviour
     }
 
     [SerializeField] private List<DecisionClass> DecisionClasses;
-    private Dictionary<string, DecisionClass> DecisionDictionary;
+    public Dictionary<string, DecisionClass> DecisionDictionary;
+
+    public List<DecisionClass> DecisionList => DecisionClasses;
 
     private void Awake()
     {

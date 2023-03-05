@@ -13,12 +13,20 @@ using UnityEngine;
 public class DecisionClass
 {
     [SerializeField] private string _name;
+    [SerializeField] private int _associatedConversation;
+    [SerializeField] private NPCClass _associatedNPC;
     [SerializeField] private int _weight;
-    [SerializeField] private List<string> _choices;
+    public List<string> Choices;
     [SerializeField] private int _choiceMade;
 
     public string Name => _name;
+    public int AssociatedConversation => _associatedConversation;
+    public NPCClass AssociatedNPC => _associatedNPC;
     public int Weight => _weight;
-       
     public int ChoiceMade => _choiceMade;
+
+    public void SetChoice(int num)
+    {
+        _choiceMade = num;
+    }
 }
