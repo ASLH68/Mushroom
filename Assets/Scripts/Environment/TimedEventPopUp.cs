@@ -59,6 +59,10 @@ public class TimedEventPopUp : MonoBehaviour
         // Set display text
         /* DISPLAY CODE HERE */
         _textObject.GetComponent<CanvasRenderer>().SetAlpha(100);
+
+        // Enable Cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     /// <summary>
@@ -66,9 +70,25 @@ public class TimedEventPopUp : MonoBehaviour
     /// </summary>
     public void ContinueGame()
     {
+        // Disable Cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        // Starts next part of Day/Night cycle
+        if (_wasDay)
+        {
+            _timeCycle.StartCoroutine("NightCycleController");
+        }
+        else
+        {
+            _timeCycle.StartCoroutine("DayCycleController");
+        }
+
+        _wasDay = !_wasDay;
+
         // Hide Pop Up
         _popUpBG.SetActive(false);
-        _popUpButton.SetActive(false);
         _textObject.GetComponent<CanvasRenderer>().SetAlpha(0);
+        _popUpButton.SetActive(false);
     }
 }
