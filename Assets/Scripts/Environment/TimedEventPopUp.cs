@@ -16,13 +16,23 @@ public class TimedEventPopUp : MonoBehaviour
     // Vars
     // Text to alter
     [SerializeField] GameObject _textObject;
-    TextMeshPro _text;
+    TextMeshProUGUI _text;
     // Time Management
     [SerializeField] TimeCycleScript _timeCycle;
     bool _wasDay = true;
     // Pop up objects
     [SerializeField] GameObject _popUpBG;
     [SerializeField] GameObject _popUpButton;
+    // Misc
+    bool _openingScene = true;
+
+    // Event Text
+    int _eveningOrder;
+    string[] _eveningEvents = new string[]
+    { "You light the campfire for the first time." };
+
+    int _morningSelection;
+    string[] _morningEvents = new string[] { };
 
     /// <summary>
     /// Start is called before the first frame update
@@ -30,13 +40,18 @@ public class TimedEventPopUp : MonoBehaviour
     void Start()
     {
         // Initialize Vars
-        _text = _textObject.GetComponent<TextMeshPro>();
+        _text = _textObject.GetComponent<TextMeshProUGUI>();
+
+        // Set up for initial screen
+        // Enable Cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         // Hide Pop Up
-        _popUpBG.SetActive(false);
+        /*_popUpBG.SetActive(false);
         _popUpButton.SetActive(false);
 
-        _textObject.GetComponent<CanvasRenderer>().SetAlpha(0);
+        _textObject.GetComponent<CanvasRenderer>().SetAlpha(0); */
     }
 
     /// <summary>
@@ -57,7 +72,16 @@ public class TimedEventPopUp : MonoBehaviour
         _popUpButton.SetActive(true);
 
         // Set display text
-        /* DISPLAY CODE HERE */
+        if (_wasDay)
+        {
+            // Evening events play in the order they are listed in the array
+            _text.text = _eveningEvents[_eveningOrder];
+            _eveningOrder++;
+        }
+        else
+        {
+            /* IMPLEMENT ONCE EVENT SYSTEM IS IN PLACE */
+        }
         _textObject.GetComponent<CanvasRenderer>().SetAlpha(100);
 
         // Enable Cursor
@@ -75,7 +99,7 @@ public class TimedEventPopUp : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         // Starts next part of Day/Night cycle
-        if (_wasDay)
+        if (_wasDay && !_openingScene)
         {
             _timeCycle.StartCoroutine("NightCycleController");
         }
@@ -85,6 +109,14 @@ public class TimedEventPopUp : MonoBehaviour
         }
 
         _wasDay = !_wasDay;
+
+        // For opening scene, starts correct day cycle
+        if (_openingScene)
+        {
+            _wasDay = true;
+            _timeCycle.StartCoroutine("DayCycleController");
+            _openingScene = false;
+        }
 
         // Hide Pop Up
         _popUpBG.SetActive(false);

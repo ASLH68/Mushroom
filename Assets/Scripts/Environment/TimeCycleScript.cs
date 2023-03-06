@@ -43,7 +43,7 @@ public class TimeCycleScript : MonoBehaviour
     {
         _light = GameObject.FindObjectOfType<Light>();
         _cycleLength = GameController.main.CycleLength;
-        StartCoroutine("DayCycleController");
+        //StartCoroutine("DayCycleController");
     }
 
     public IEnumerator DayCycleController()
