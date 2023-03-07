@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DecisionClasses:
-  - _name: 1 Decision Test 1
+  - _name: Day 1 - H
     _associatedConversation: 0
     _associatedNPC: {fileID: 1636962632}
     _weight: 30
@@ -431,7 +431,7 @@ MonoBehaviour:
     - 1d1 Neutral Choice
     - 1d1 Sad Choice
     _choiceMade: 0
-  - _name: 1 Decision Test 2
+  - _name: Night 1 - H
     _associatedConversation: 1
     _associatedNPC: {fileID: 1636962632}
     _weight: 30
@@ -440,23 +440,23 @@ MonoBehaviour:
     - 1d2 Neutral Choice
     - 1d2 Sad Choice
     _choiceMade: 0
-  - _name: 2 Decision Test 1
+  - _name: Day 1 - F
     _associatedConversation: 0
     _associatedNPC: {fileID: 867424737}
     _weight: 30
     Choices:
-    - 2d1 Happy Choice
-    - 2d1 Neutral Choice
-    - 2d1 Sad Choice
+    - "Thanks for letting me tag along, I\u2019ll try my best "
+    - I hope that it was ok that I tagged along on this trip
+    - "I hope you won\u2019t expect much from me during this trip"
     _choiceMade: 0
-  - _name: 2 Decision Test 2
+  - _name: Night 1 - F
     _associatedConversation: 1
     _associatedNPC: {fileID: 867424737}
     _weight: 30
     Choices:
-    - 2d2 Happy Choice
-    - 2d2 Neutral Choice
-    - 2d2 Sad Choice
+    - I can get the campfire lit
+    - 'Do you know what we should do to get the campfire lit? '
+    - 'Go get the campfire lit '
     _choiceMade: 0
 --- !u!4 &242865578
 Transform:
@@ -3225,32 +3225,32 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: "Thanks for letting me tag along, I\u2019ll try my best\r\n"
+      value: "Keep that up and I\u2019m sure we\u2019ll be good friends"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: I hope that it was ok that I tagged along on this trip
+      value: "We\u2019ll find out"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
-      value: "I hope you won\u2019t expect much from me during this trip\r\n"
+      value: "Now I won\u2019t"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
-      value: I can get the campfire lit
+      value: "And I\u2019ll find some branches"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
-      value: Do you know what we should do to get the campfire lit?
+      value: Finding something flammable would be a good start
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
-      value: Go get the campfire lit
+      value: "I shouldn\u2019t have expected much from you on this trip"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
