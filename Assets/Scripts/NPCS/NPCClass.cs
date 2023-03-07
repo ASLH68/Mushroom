@@ -63,7 +63,7 @@ public class NPCClass : MonoBehaviour
     #region Dialogue vars
 
     // List of dialogue for each NPC conversation
-    [Header("Dialogue")]
+    [Header("Conversations & Dialogue")]
     [SerializeField] private List<Conversations> _conversations;
 
     [HideInInspector] public Conversations CurrentConversation;
@@ -77,8 +77,12 @@ public class NPCClass : MonoBehaviour
     {
         _isInteractable = true;
         _conversationNum = 0;
-        CurrentConversation = _conversations[_conversationNum];
-        CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+
+        if(_conversations.Count > 0)
+        {
+            CurrentConversation = _conversations[_conversationNum];
+            CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        }      
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,11 +102,6 @@ public class NPCClass : MonoBehaviour
             DialogueUIController.main.HideInteractKey();
             DialogueUIController.main.SetCanTalk(false);
         }
-    }
-
-    private void SetDialogue(string dialogue)
-    {
-        DialogueUIController.main.SetDialogueText(dialogue);
     }
 
     public void SetMood(int changeNum)
@@ -130,8 +129,16 @@ public class NPCClass : MonoBehaviour
     /// </summary>
     public void ChangeConversation()
     {
-        _conversationNum++;
-        CurrentConversation = _conversations[_conversationNum];
-        CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        if(_conversationNum == _conversations.Count-1)
+        {
+            _isInteractable = false;
+            DialogueUIController.main.HideInteractKey();
+        }
+        else 
+        {
+            _conversationNum++;
+            CurrentConversation = _conversations[_conversationNum];
+            CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        }
     }
 }

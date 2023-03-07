@@ -13,6 +13,10 @@ using UnityEngine;
 [System.Serializable]
 public class NPCDialogue
 {
+    public NPCDialogue(Emotion emotion)
+    {
+        CurrentEmotion = emotion;
+    }
     /// <summary>
     /// Emotion associated with the dialogue
     /// </summary>

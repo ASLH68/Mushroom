@@ -194,7 +194,6 @@ public class DialogueUIController : MonoBehaviour
 
         NPCManager.main.CurrentNPC.SetMood(relativeWeight);
         DisableChoiceButtons();
-        //EndDialogue();
     }
 
     /// <summary>
@@ -207,6 +206,7 @@ public class DialogueUIController : MonoBehaviour
         HideNPCDialogue();
         HideDialogueOptions();
         HideMoodBar();
+        ShowInteractKey();
 
         if(_currentDecision.ChoiceMade != 0)
         {
@@ -214,6 +214,9 @@ public class DialogueUIController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Disables & Enables the choice button options
+    /// </summary>
     private void DisableChoiceButtons()
     {
         foreach(Button butt in _buttonChoices)
@@ -229,11 +232,15 @@ public class DialogueUIController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the option text
+    /// </summary>
     private void SetOptions()
     {
         foreach(DecisionClass dec in DecisionManager.main.DecisionList)
         {
-            if(dec.AssociatedConversation == NPCManager.main.CurrentNPC.ConversationNum)
+            if(dec.AssociatedConversation == NPCManager.main.CurrentNPC.ConversationNum && 
+                NPCManager.main.CurrentNPC.Equals(dec.AssociatedNPC))
             {
                 _currentDecision = dec;
                 for(int i = 0; i < _buttonChoices.Count; i++)

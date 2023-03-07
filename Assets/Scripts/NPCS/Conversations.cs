@@ -14,7 +14,6 @@ using UnityEngine;
 public class Conversations
 {
     [SerializeField] private int _conversationNum;
-    public List<NPCDialogue> _conversationDialogues;
-
+    public List<NPCDialogue> _conversationDialogues; 
     public int ConversationNum => _conversationNum;
 }
