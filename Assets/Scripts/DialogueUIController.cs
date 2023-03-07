@@ -20,6 +20,7 @@ public class DialogueUIController : MonoBehaviour
     public static DialogueUIController main;
 
     [SerializeField] private TextMeshProUGUI _npcDialogueText;
+    [SerializeField] private TextMeshProUGUI _npcNameText;
 
     [Header("Panels")]
     [SerializeField] private GameObject _npcDialoguePanel;
@@ -30,6 +31,7 @@ public class DialogueUIController : MonoBehaviour
     //[SerializeField] private List<TextMeshProUGUI> _buttonChoices;
     [SerializeField] private List<GameObject> _buttonChoiceObjs;
     private List<Button> _buttonChoices = new List<Button>();
+    [SerializeField] private GameObject _nextButton;
 
     private DecisionClass _currentDecision;
 
@@ -151,7 +153,7 @@ public class DialogueUIController : MonoBehaviour
     /// Sets the dialogue text on screen
     /// </summary>
     /// <param name="text"></param>
-    public void SetDialogueText(string text)
+    private void SetDialogueText(string text)
     {
         _npcDialogueText.text = text;
     }
@@ -171,29 +173,39 @@ public class DialogueUIController : MonoBehaviour
                 SetDialogueText(npcDialogue.Dialogue);
             }
         }
+        _npcNameText.text = NPCManager.main.CurrentNPC.NPCName;
         ShowMoodBar();
         ShowDialogueOptions();
-        EnableChoiceButtons();
         SetOptions();
     }
 
     public void OptionSelected(int optionNum)
     {
-        _currentDecision.SetChoice(optionNum);
-
-        int relativeWeight = _currentDecision.Weight;
-
-        switch(optionNum)
+        if(optionNum != 0)
         {
-            case 2: relativeWeight = 0;
-                break;
-            case 3:
-                relativeWeight = -relativeWeight;
-                break;
-        }
+            DisableChoiceButtons();
+            _currentDecision.SetChoice(optionNum);
 
-        NPCManager.main.CurrentNPC.SetMood(relativeWeight);
-        DisableChoiceButtons();
+            int relativeWeight = _currentDecision.Weight;
+
+            switch (optionNum)
+            {
+                case 2:
+                    relativeWeight = 0;
+                    break;
+                case 3:
+                    relativeWeight = -relativeWeight;
+                    break;
+            }
+
+            NPCManager.main.CurrentNPC.SetMood(relativeWeight);
+        }
+        
+        if (NPCManager.main.CurrentNPC.CurrentConversation.ContinueConversation)
+        {
+            NPCManager.main.CurrentNPC.ChangeConversation();
+            DisplayDialogue();
+        }
     }
 
     /// <summary>
@@ -232,11 +244,27 @@ public class DialogueUIController : MonoBehaviour
         }
     }
 
+    private void ShowChoiceButtons()
+    {
+        foreach(GameObject obj in _buttonChoiceObjs)
+        {
+            obj.SetActive(true);
+        }
+    }
+    public void HideChoiceButtons()
+    {
+        foreach (GameObject obj in _buttonChoiceObjs)
+        {
+            obj.SetActive(false);
+        }
+    }
+
     /// <summary>
     /// Sets the option text
     /// </summary>
     private void SetOptions()
     {
+        bool hasDecision = false;
         foreach(DecisionClass dec in DecisionManager.main.DecisionList)
         {
             if(dec.AssociatedConversation == NPCManager.main.CurrentNPC.ConversationNum && 
@@ -247,11 +275,20 @@ public class DialogueUIController : MonoBehaviour
                 {
                     _buttonChoices[i].GetComponentInChildren<TextMeshProUGUI>().text = dec.Choices[i];
                 }
+                ShowChoiceButtons();
+                EnableChoiceButtons();
+                hasDecision = true;
                 break;
             }
         }
-    }
+        _nextButton.SetActive(!hasDecision);
 
+        if(!hasDecision)
+        {
+            HideChoiceButtons();
+        }
+        
+    }
     #region Cursor
     /// <summary>
     /// Hides and locks the cursor

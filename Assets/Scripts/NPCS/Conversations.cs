@@ -14,6 +14,10 @@ using UnityEngine;
 public class Conversations
 {
     [SerializeField] private int _conversationNum;
-    public List<NPCDialogue> _conversationDialogues; 
+    public List<NPCDialogue> _conversationDialogues;
+
+    [SerializeField][Tooltip("Conversation continues once player has selected their response")] 
+    private bool _continueConversation;
+    public bool ContinueConversation => _continueConversation;
     public int ConversationNum => _conversationNum;
 }
