@@ -52,6 +52,12 @@ public class NPCClass : MonoBehaviour
     [Range(0, 100)]
     [Tooltip("Highest amount that will be considered happy.")]
     [SerializeField] private int _happyThreshhold;
+
+    [SerializeField] private MoodBarUI _moodBarUI;
+    public MoodBarUI MoodBarUI => _moodBarUI;
+
+    [SerializeField] private GameObject _moodBarGameObj;
+    public GameObject MoodBarGameObj => _moodBarGameObj;
     #endregion
 
     #region Dialogue vars
@@ -59,9 +65,9 @@ public class NPCClass : MonoBehaviour
     // List of dialogue for each NPC conversation
     [Header("Dialogue")]
     [SerializeField] private List<Conversations> _conversations;
-    //[SerializeField] private List<NPCDialogue> _conversation1;
 
-    [HideInInspector] public List<NPCDialogue> CurrentConversation;
+    [HideInInspector] public Conversations CurrentConversation;
+    [HideInInspector] public List<NPCDialogue> CurrentConvoDialogue;
 
     private int _conversationNum;
     public int ConversationNum => _conversationNum;
@@ -70,9 +76,9 @@ public class NPCClass : MonoBehaviour
     private void Start()
     {
         _isInteractable = true;
-        //CurrentConversation = _conversation1;
         _conversationNum = 0;
-        CurrentConversation = _conversations[_conversationNum]._conversationDialogues;
+        CurrentConversation = _conversations[_conversationNum];
+        CurrentConvoDialogue = CurrentConversation._conversationDialogues;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -115,5 +121,17 @@ public class NPCClass : MonoBehaviour
         {
             _emotion = Emotion.SAD;
         }
+
+        _moodBarUI.FillEmotionMeter();
+    }
+
+    /// <summary>
+    /// Changes to the next conversation
+    /// </summary>
+    public void ChangeConversation()
+    {
+        _conversationNum++;
+        CurrentConversation = _conversations[_conversationNum];
+        CurrentConvoDialogue = CurrentConversation._conversationDialogues;
     }
 }
