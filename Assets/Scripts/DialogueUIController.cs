@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using Cursor = UnityEngine.Cursor;
 
 public class DialogueUIController : MonoBehaviour
@@ -27,7 +27,9 @@ public class DialogueUIController : MonoBehaviour
     [SerializeField] private GameObject _interactKeyDisplay;
 
     [Header("Button Choices")]
-    [SerializeField] private List<TextMeshProUGUI> _buttonChoices;
+    //[SerializeField] private List<TextMeshProUGUI> _buttonChoices;
+    [SerializeField] private List<GameObject> _buttonChoiceObjs;
+    private List<Button> _buttonChoices = new List<Button>();
 
     private DecisionClass _currentDecision;
 
@@ -46,6 +48,15 @@ public class DialogueUIController : MonoBehaviour
             Destroy(this);
         }
         LockCursor();
+    }
+
+    private void Start()
+    {
+
+        foreach(GameObject obj in _buttonChoiceObjs)
+        {
+            _buttonChoices.Add(obj.GetComponent<Button>());
+        }
     }
 
     private void Update()
@@ -78,11 +89,12 @@ public class DialogueUIController : MonoBehaviour
     /// </summary>
     public void EndDialogue()
     {
-        LockCursor();
+        /*LockCursor();
         FirstPersonController.main.IsControllable = true;
         HideInteractKey();
         HideNPCDialogue();
         HideDialogueOptions();
+        HideMoodBar();*/
     }
 
     #region Visibility Functions
@@ -121,6 +133,18 @@ public class DialogueUIController : MonoBehaviour
     {
         _dialogueOptionPanel.SetActive(false);
     }
+
+    /// <summary>
+    /// Enables and disables the mood bar from showing
+    /// </summary>
+    public void ShowMoodBar()
+    {
+        NPCManager.main.CurrentNPC.MoodBarGameObj.SetActive(true);
+    }
+    public void HideMoodBar()
+    {
+        NPCManager.main.CurrentNPC.MoodBarGameObj.SetActive(false);
+    }
     #endregion
 
     /// <summary>
@@ -140,14 +164,16 @@ public class DialogueUIController : MonoBehaviour
         NPCClass currentNPC;
         currentNPC = NPCManager.main.CurrentNPC;
 
-        foreach(NPCDialogue npcDialogue in currentNPC.CurrentConversation)
+        foreach(NPCDialogue npcDialogue in currentNPC.CurrentConvoDialogue)
         {
             if(currentNPC.CurrentEmotion.Equals(npcDialogue.CurrentEmotion.ToString()))
             {
                 SetDialogueText(npcDialogue.Dialogue);
             }
         }
+        ShowMoodBar();
         ShowDialogueOptions();
+        EnableChoiceButtons();
         SetOptions();
     }
 
@@ -167,7 +193,40 @@ public class DialogueUIController : MonoBehaviour
         }
 
         NPCManager.main.CurrentNPC.SetMood(relativeWeight);
-        EndDialogue();
+        DisableChoiceButtons();
+        //EndDialogue();
+    }
+
+    /// <summary>
+    /// Closes the dialogue UI and ends the conversation
+    /// </summary>
+    public void LeaveNPC()
+    {
+        LockCursor();
+        FirstPersonController.main.IsControllable = true;
+        HideNPCDialogue();
+        HideDialogueOptions();
+        HideMoodBar();
+
+        if(_currentDecision.ChoiceMade != 0)
+        {
+            NPCManager.main.CurrentNPC.ChangeConversation();
+        }
+    }
+
+    private void DisableChoiceButtons()
+    {
+        foreach(Button butt in _buttonChoices)
+        {
+            butt.interactable = false;
+        }
+    }
+    private void EnableChoiceButtons()
+    {
+        foreach(Button butt in _buttonChoices)
+        {
+            butt.interactable = true;
+        }
     }
 
     private void SetOptions()
@@ -179,7 +238,7 @@ public class DialogueUIController : MonoBehaviour
                 _currentDecision = dec;
                 for(int i = 0; i < _buttonChoices.Count; i++)
                 {
-                    _buttonChoices[i].text = dec.Choices[i];
+                    _buttonChoices[i].GetComponentInChildren<TextMeshProUGUI>().text = dec.Choices[i];
                 }
                 break;
             }
