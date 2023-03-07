@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.004101143, g: 0.003698667, b: 0.0018515392, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040912395, g: 0.0036873834, b: 0.0018427754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3176,6 +3176,10 @@ MonoBehaviour:
   _timeCycle: {fileID: 871806828}
   _popUpBG: {fileID: 1395523076}
   _popUpButton: {fileID: 449703236}
+  eveningEventTitle: []
+  eveningEventDescription: []
+  morningEventTitle: []
+  morningEventDescription: []
 --- !u!1001 &1422997178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3186,7 +3190,7 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _name
-      value: Test NPC 2
+      value: Fiona
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -3221,32 +3225,32 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: 2 Happy D 1
+      value: "Thanks for letting me tag along, I\u2019ll try my best\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: 2 Neutral D 1
+      value: I hope that it was ok that I tagged along on this trip
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
-      value: 2 Sad D 1
+      value: "I hope you won\u2019t expect much from me during this trip\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
-      value: 2 Happy D 2
+      value: I can get the campfire lit
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
-      value: 2 Neutral D 2
+      value: Do you know what we should do to get the campfire lit?
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
-      value: 2 Sad D 2
+      value: Go get the campfire lit
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -3262,6 +3266,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].CurrentEmotion
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4164134072144803814, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -3321,12 +3330,12 @@ PrefabInstance:
     - target: {fileID: 4164134072144803815, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: m_Name
-      value: NPC 2
+      value: Fiona
       objectReference: {fileID: 0}
     - target: {fileID: 5646783584155630594, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: m_Name
-      value: NPC2 Capsule
+      value: Fiona Capsule
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb8ecf7ee0b1b946aeaa41391f3080f, type: 3}
@@ -4427,7 +4436,7 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _name
-      value: Test NPC 1
+      value: Harry
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -4577,12 +4586,12 @@ PrefabInstance:
     - target: {fileID: 4164134072144803815, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: m_Name
-      value: NPC 1
+      value: Harry
       objectReference: {fileID: 0}
     - target: {fileID: 5646783584155630594, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: m_Name
-      value: NPC1 Capsule
+      value: Harry Capsule
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffb8ecf7ee0b1b946aeaa41391f3080f, type: 3}
