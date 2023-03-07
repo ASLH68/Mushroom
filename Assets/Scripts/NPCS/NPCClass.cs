@@ -7,16 +7,17 @@
 *****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class NPCClass : MonoBehaviour
 {
     // NPCs name
-    [SerializeField] protected string _name;
-    public string Name => name;
+    [SerializeField] private string _npcName;
+    public string NPCName => _npcName;
 
     // Whether or not the NPC is able to be interacted with
-    protected bool _isInteractable;
+    private bool _isInteractable;
     public bool IsInteractable => _isInteractable;
 
     #region Emotion vars
@@ -107,8 +108,9 @@ public class NPCClass : MonoBehaviour
     public void SetMood(int changeNum)
     {
         _moodVal += changeNum;
+        _moodVal = Mathf.Clamp(_moodVal, 0, 100);
 
-        if(_moodVal > _neutralThreshhold)
+        if (_moodVal > _neutralThreshhold)
         {
             _emotion = Emotion.HAPPY;
         }
@@ -136,6 +138,7 @@ public class NPCClass : MonoBehaviour
         }
         else 
         {
+            DialogueUIController.main.HideChoiceButtons();
             _conversationNum++;
             CurrentConversation = _conversations[_conversationNum];
             CurrentConvoDialogue = CurrentConversation._conversationDialogues;
