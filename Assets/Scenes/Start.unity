@@ -1101,7 +1101,7 @@ GameObject:
   - component: {fileID: 419608500}
   - component: {fileID: 419608499}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: All Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,17 +1152,19 @@ MonoBehaviour:
     of the story and the fate of everyone, including yourself.
 
 
-    E - Interact
-    with an NPC
+    Esc - Close
+    game
+
+    E - Interact with an NPC
 
     WASD - Movement
 
     Shift - Sprint
 
-    Space - Jump
+    Space
+    - Jump
 
-    Mouse
-    - Look around
+    Mouse - Look around
 
     Left Mouse Button - Select dialogue option'
   m_isRightToLeft: 0
