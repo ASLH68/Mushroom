@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.004101143, g: 0.003698667, b: 0.0018515392, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040912395, g: 0.0036873834, b: 0.0018427754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -448,7 +448,7 @@ MonoBehaviour:
     - "Thanks for letting me tag along, I\u2019ll try my best "
     - I hope that it was ok that I tagged along on this trip
     - "I hope you won\u2019t expect much from me during this trip"
-    _choiceMade: 1
+    _choiceMade: 7
   - _name: Night 1 - F
     _associatedConversation: 1
     _associatedNPC: {fileID: 867424737}
@@ -457,7 +457,44 @@ MonoBehaviour:
     - I can get the campfire lit
     - 'Do you know what we should do to get the campfire lit? '
     - 'Go get the campfire lit '
+    _choiceMade: 7
+  - _name: Convo1 Fiona
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 867424737}
+    _weight: 30
+    Choices:
+    - I certainly am
+    - "I\u2019ve never been camping before"
+    - "I won\u2019t"
     _choiceMade: 0
+  - _name: Convo1.5 Fiona
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 867424737}
+    _weight: 30
+    Choices:
+    - "I\u2019ll make this trip the best I can"
+    - "I haven\u2019t camped with other people before, so I\u2019m not sure what
+      to expect"
+    - "I shouldn\u2019t have gone on this trip"
+    _choiceMade: 1
+  - _name: Convo2 Fiona
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 867424737}
+    _weight: 30
+    Choices:
+    - I would cheer you on
+    - "I\u2019ve never watched cross country "
+    - Do you run from your problems?
+    _choiceMade: 2
+  - _name: Convo2.5 Fiona
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 867424737}
+    _weight: 30
+    Choices:
+    - I hope you enjoy your run
+    - "Don\u2019t count on me going, but enjoy yourself"
+    - "I couldn\u2019t care"
+    _choiceMade: 3
 --- !u!4 &242865578
 Transform:
   m_ObjectHideFlags: 0
@@ -3346,16 +3383,46 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationNum
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._continueConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._continueConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._continueConversation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
@@ -3366,6 +3433,26 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.size
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
@@ -3400,6 +3487,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[0].Dialogue
+      value: "I hope you\u2019re ready for a fun week of camping"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
+      value: Are you ready to go camping
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
+      value: Are you going to contribute anything
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[0].Dialogue
+      value: "I\u2019ve only camped with my family before"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[1].Dialogue
+      value: I wonder what camping with you two will be like
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[2].Dialogue
+      value: "I don\u2019t know why I\u2019m camping with you"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.data[0].Dialogue
+      value: I hope to be on a college cross country team
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.data[1].Dialogue
+      value: I used to be on a cross country team
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.data[2].Dialogue
+      value: "Cross country is a sport, I couldn\u2019t care what you say"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.data[0].Dialogue
+      value: "Don\u2019t worry when I\u2019m gone, I\u2019ll probably be on a run"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.data[1].Dialogue
+      value: "I\u2019m going on a run later\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.data[2].Dialogue
+      value: "Don\u2019t follow me when I go on a run later"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].CurrentEmotion
       value: 1
       objectReference: {fileID: 0}
@@ -3416,6 +3563,46 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.data[2].CurrentEmotion
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4164134072144803814, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
