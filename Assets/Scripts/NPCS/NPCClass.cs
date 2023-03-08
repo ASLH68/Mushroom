@@ -7,16 +7,17 @@
 *****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class NPCClass : MonoBehaviour
 {
     // NPCs name
-    [SerializeField] protected string _name;
-    public string Name => name;
+    [SerializeField] private string _npcName;
+    public string NPCName => _npcName;
 
     // Whether or not the NPC is able to be interacted with
-    protected bool _isInteractable;
+    private bool _isInteractable;
     public bool IsInteractable => _isInteractable;
 
     #region Emotion vars
@@ -63,7 +64,7 @@ public class NPCClass : MonoBehaviour
     #region Dialogue vars
 
     // List of dialogue for each NPC conversation
-    [Header("Dialogue")]
+    [Header("Conversations & Dialogue")]
     [SerializeField] private List<Conversations> _conversations;
 
     [HideInInspector] public Conversations CurrentConversation;
@@ -77,8 +78,12 @@ public class NPCClass : MonoBehaviour
     {
         _isInteractable = true;
         _conversationNum = 0;
-        CurrentConversation = _conversations[_conversationNum];
-        CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+
+        if(_conversations.Count > 0)
+        {
+            CurrentConversation = _conversations[_conversationNum];
+            CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        }      
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,16 +105,12 @@ public class NPCClass : MonoBehaviour
         }
     }
 
-    private void SetDialogue(string dialogue)
-    {
-        DialogueUIController.main.SetDialogueText(dialogue);
-    }
-
     public void SetMood(int changeNum)
     {
         _moodVal += changeNum;
+        _moodVal = Mathf.Clamp(_moodVal, 0, 100);
 
-        if(_moodVal > _neutralThreshhold)
+        if (_moodVal > _neutralThreshhold)
         {
             _emotion = Emotion.HAPPY;
         }
@@ -130,8 +131,17 @@ public class NPCClass : MonoBehaviour
     /// </summary>
     public void ChangeConversation()
     {
-        _conversationNum++;
-        CurrentConversation = _conversations[_conversationNum];
-        CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        if(_conversationNum == _conversations.Count-1)
+        {
+            _isInteractable = false;
+            DialogueUIController.main.HideInteractKey();
+        }
+        else 
+        {
+            DialogueUIController.main.HideChoiceButtons();
+            _conversationNum++;
+            CurrentConversation = _conversations[_conversationNum];
+            CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        }
     }
 }

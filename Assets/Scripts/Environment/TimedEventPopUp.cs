@@ -16,7 +16,7 @@ public class TimedEventPopUp : MonoBehaviour
     // Vars
     // Text to alter
     [SerializeField] GameObject _textObject;
-    TextMeshProUGUI _text;
+    TextMeshProUGUI /*_text*/titleText;
     // Time Management
     [SerializeField] TimeCycleScript _timeCycle;
     bool _wasDay = true;
@@ -28,11 +28,15 @@ public class TimedEventPopUp : MonoBehaviour
 
     // Event Text
     int _eveningOrder;
-    string[] _eveningEvents = new string[]
-    { "You light the campfire for the first time." };
+    [SerializeField] private List<string> eveningEventTitle = new List<string>();
+    [SerializeField] private List<string> eveningEventDescription = new List<string>();
+    /*string[] _eveningEvents = new string[]
+    { "You light the campfire for the first time." };*/ 
 
     int _morningSelection;
-    string[] _morningEvents = new string[] { };
+    [SerializeField] private List<string> morningEventTitle = new List<string>();
+    [SerializeField] private List<string> morningEventDescription = new List<string>();
+    //string[] _morningEvents = new string[] { };
 
     /// <summary>
     /// Start is called before the first frame update
@@ -40,7 +44,7 @@ public class TimedEventPopUp : MonoBehaviour
     void Start()
     {
         // Initialize Vars
-        _text = _textObject.GetComponent<TextMeshProUGUI>();
+        /*_text*/titleText = _textObject.GetComponent<TextMeshProUGUI>();
 
         // Set up for initial screen
         // Enable Cursor
@@ -75,11 +79,13 @@ public class TimedEventPopUp : MonoBehaviour
         if (_wasDay)
         {
             // Evening events play in the order they are listed in the array
-            _text.text = _eveningEvents[_eveningOrder];
+            /*_text*/titleText.text = /*_eveningEvents*/eveningEventTitle[_eveningOrder];
             _eveningOrder++;
         }
         else
         {
+            titleText.text = morningEventDescription[_morningSelection];
+            _morningSelection++;
             /* IMPLEMENT ONCE EVENT SYSTEM IS IN PLACE */
         }
         _textObject.GetComponent<CanvasRenderer>().SetAlpha(100);
