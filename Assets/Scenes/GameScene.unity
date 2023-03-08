@@ -3360,6 +3360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3367,6 +3372,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[0]._nextConvoNum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[1]._nextConvoNum
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -3381,6 +3396,11 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
+      value: "Now I won\u2019t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[3].Dialogue
       value: "Now I won\u2019t"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
@@ -3400,12 +3420,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[0]._decisionChoiceNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[1]._decisionChoiceNum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].CurrentEmotion
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[3].CurrentEmotion
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,

@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPCClass : MonoBehaviour
@@ -88,20 +89,20 @@ public class NPCClass : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag.Equals("Player") && _isInteractable)
+        if(other.tag.Equals("Player") && DialogueUIController.main.CanTalk)
         {
             DialogueUIController.main.ShowInteractKey();
-            DialogueUIController.main.SetCanTalk(true);
+            //DialogueUIController.main.SetCanTalk(true);
             NPCManager.main.SetCurrentNPC(this.gameObject.GetComponent<NPCClass>());
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag.Equals("Player") && _isInteractable)
+        if(other.tag.Equals("Player") && DialogueUIController.main.CanTalk)
         {
             DialogueUIController.main.HideInteractKey();
-            DialogueUIController.main.SetCanTalk(false);
+            //DialogueUIController.main.SetCanTalk(false);
         }
     }
 
@@ -130,18 +131,32 @@ public class NPCClass : MonoBehaviour
     /// Changes to the next conversation
     /// </summary>
     public void ChangeConversation()
-    {
+    { 
         if(_conversationNum == _conversations.Count-1)
         {
             _isInteractable = false;
-            DialogueUIController.main.HideInteractKey();
         }
-        else 
+        else if(!CurrentConversation.CheckFollowUp())
         {
+            // Incremements convo by 1 if theres no follow up
             DialogueUIController.main.HideChoiceButtons();
             _conversationNum++;
             CurrentConversation = _conversations[_conversationNum];
             CurrentConvoDialogue = CurrentConversation._conversationDialogues;
         }
+        else 
+        {
+            DialogueUIController.main.HideChoiceButtons();
+            CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="num"></param>
+    public void SetNextConvoNum(int num)
+    {
+        _conversationNum = num;
     }
 }

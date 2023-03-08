@@ -34,9 +34,10 @@ public class DialogueUIController : MonoBehaviour
     [SerializeField] private GameObject _nextButton;
 
     private DecisionClass _currentDecision;
+    public DecisionClass CurrentDecision => _currentDecision;
 
     private bool _canTalk;  //whether the play is able to talk to the NPC or not
-    public bool CanTalk => CanTalk;
+    public bool CanTalk => _canTalk;
 
     #region Awake, Start, Update
     private void Awake()
@@ -54,7 +55,7 @@ public class DialogueUIController : MonoBehaviour
 
     private void Start()
     {
-
+        _canTalk = true;
         foreach(GameObject obj in _buttonChoiceObjs)
         {
             _buttonChoices.Add(obj.GetComponent<Button>());
@@ -65,6 +66,7 @@ public class DialogueUIController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && _canTalk)
         {
+            _canTalk = false;
             UnlockCursor();
             FirstPersonController.main.IsControllable = false;
 
@@ -130,6 +132,14 @@ public class DialogueUIController : MonoBehaviour
     public void ShowDialogueOptions()
     {
         _dialogueOptionPanel.SetActive(true);
+        if(NPCManager.main.CurrentNPC.IsInteractable)
+        {
+            EnableChoiceButtons();
+        }
+        else
+        {
+            DisableChoiceButtons();
+        }
     }
     public void HideDialogueOptions()
     {
@@ -213,6 +223,7 @@ public class DialogueUIController : MonoBehaviour
     /// </summary>
     public void LeaveNPC()
     {
+        _canTalk = true;
         LockCursor();
         FirstPersonController.main.IsControllable = true;
         HideNPCDialogue();
@@ -276,7 +287,6 @@ public class DialogueUIController : MonoBehaviour
                     _buttonChoices[i].GetComponentInChildren<TextMeshProUGUI>().text = dec.Choices[i];
                 }
                 ShowChoiceButtons();
-                EnableChoiceButtons();
                 hasDecision = true;
                 break;
             }
