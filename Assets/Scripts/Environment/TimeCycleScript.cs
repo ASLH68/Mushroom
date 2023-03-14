@@ -26,6 +26,7 @@ public class TimeCycleScript : MonoBehaviour
 
     // Daily pop up display (added by Peter)
     [SerializeField] TimedEventPopUp _popUpObject;
+    [SerializeField] EventManager _eventManager;
 
     private void Awake()
     {
@@ -75,7 +76,7 @@ public class TimeCycleScript : MonoBehaviour
 
             yield return null;
         }
-        _popUpObject.ActivatePopUp();
+        _eventManager.SelectEvent();
     }
 
 }

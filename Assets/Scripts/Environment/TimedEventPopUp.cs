@@ -16,7 +16,7 @@ public class TimedEventPopUp : MonoBehaviour
     // Vars
     // Text to alter
     [SerializeField] GameObject _textObject;
-    TextMeshProUGUI /*_text*/titleText;
+    public TextMeshProUGUI /*_text*/titleText;
     // Time Management
     [SerializeField] TimeCycleScript _timeCycle;
     bool _wasDay = true;
@@ -84,9 +84,8 @@ public class TimedEventPopUp : MonoBehaviour
         }
         else
         {
-            titleText.text = morningEventDescription[_morningSelection];
-            _morningSelection++;
-            /* IMPLEMENT ONCE EVENT SYSTEM IS IN PLACE */
+            /*titleText.text = morningEventDescription[_morningSelection];
+            _morningSelection++;*/
         }
         _textObject.GetComponent<CanvasRenderer>().SetAlpha(100);
 
