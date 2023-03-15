@@ -15,7 +15,7 @@ public class Event
     int _ID;
     string _name;
     string _displayText;
-    List<GameObject> _eventObjects = new List<GameObject>();
+    List<GameObject> _eventObjects = new List<GameObject> { };
 
     bool _hasPlayed;
 
@@ -37,6 +37,7 @@ public class Event
     /// <summary>
     /// Constructor with all values
     /// </summary>
+
     public Event(int ID, string name, List<GameObject> eventObjects,
                  string displayText)
     {
@@ -44,10 +45,12 @@ public class Event
         _name = name;
         _displayText = displayText;
 
-        foreach (GameObject i in eventObjects)
+        if (eventObjects.Count > 0)
         {
-            _eventObjects.Add(i);
+            foreach (GameObject i in eventObjects)
+            {
+                _eventObjects.Add(i);
+            }
         }
-
     }
 }

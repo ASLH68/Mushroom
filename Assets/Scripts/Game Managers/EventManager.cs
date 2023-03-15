@@ -14,9 +14,9 @@ using TMPro;
 public class EventManager : MonoBehaviour
 {
     // Vars
-    //public int eventID = 0;
-    NPCClass _harry;
-    NPCClass _fiona;
+    int cycleNumber = 0;
+    [SerializeField] NPCClass _harry;
+    [SerializeField] NPCClass _fiona;
     [SerializeField] TextMeshProUGUI _popUpText;
     [SerializeField] TimedEventPopUp _popUpObject;
 
@@ -33,9 +33,19 @@ public class EventManager : MonoBehaviour
     Event _event2;
     Event _event3;
     Event _event4;
+    // Nightly events
+    Event _event5;
+    Event _event6;
+    Event _event7;
+    Event _event8;
+    Event _event9;
     // Daily events
+    Event _event10;
+    Event _event11;
+    Event _event12;
 
     // Event object sets
+    List<GameObject> _defaultObj;
 
     /// <summary>
     /// Start is called before the first frame update
@@ -43,17 +53,36 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         // Init vars
-        _harry = GameObject.FindGameObjectWithTag("npc1")
+        /*_harry = GameObject.FindGameObjectWithTag("npc1")
             .GetComponent<NPCClass>();
         _fiona = GameObject.FindGameObjectWithTag("npc2")
-            .GetComponent<NPCClass>();
+            .GetComponent<NPCClass>();*/
+        _defaultObj = new List<GameObject> { _placeholderObj };
 
         // Init events
-        _event0 = new Event(0, "default", null, "Nothing of note happened");
-        _event1 = new Event(1, "harryHappy", null, "Harry is happy today");
-        _event2 = new Event(2, "harrySad", null, "Harry is sad today");
-        _event3 = new Event(3, "fionaHappy", null, "Fiona is happy today");
-        _event4 = new Event(4, "fionaSad", null, "Fiona is sad today");
+        _event0 = new Event(0, "default", _defaultObj,
+                            "Nothing of note happened");
+        // Emotions
+        _event1 = new Event(1, "harryHappy", _defaultObj,
+                            "Harry is happy today");
+        _event2 = new Event(2, "harrySad", _defaultObj, "Harry is sad today");
+        _event3 = new Event(3, "fionaHappy", _defaultObj,
+                            "Fiona is happy today");
+        _event4 = new Event(4, "fionaSad", _defaultObj, "Fiona is sad today");
+        // Nightlies
+        _event5 = new Event(5, "unlitFire", _defaultObj,
+            "The fire needs to be lit");
+        _event6 = new Event(6, "fionaSkull", _defaultObj,
+            "Fiona found a skull on the ground");
+        _event7 = new Event(7, "thunderstorm", _defaultObj,
+            "A thunderstorm rages");
+        // Dailies
+        _event10 = new Event(10, "fionaRing", _defaultObj,
+            "Fiona has lost her ring");
+        _event11 = new Event(11, "treeFall", _defaultObj,
+            "A tree fell on your tent");
+        _event12 = new Event(12, "foodMissing", _defaultObj,
+            "You wake up to find your food missing"); // "GASP!" -Sena Xenoblade
     }
 
     /// <summary>
@@ -69,39 +98,78 @@ public class EventManager : MonoBehaviour
     /// </summary>
     public void SelectEvent()
     {
-        // Vars
-        Event candidate = new Event();
+
+        //Vars
         List<Event> eventPool = new List<Event>();
 
-        // Adds events to pool of potential events if their conditions are met
-        if (_harry.MoodVal >= 75 && !_event1.HasPlayed)
+        if (_popUpObject.WasDay)
         {
-            eventPool.Add(_event1);
-        }
-        if (_harry.MoodVal <= 25 && !_event2.HasPlayed)
-        {
-            eventPool.Add(_event2);
-        }
-        if (_fiona.MoodVal >= 75 && !_event3.HasPlayed)
-        {
-            eventPool.Add(_event3);
-        }
-        if (_fiona.MoodVal <= 25 && !_event4.HasPlayed)
-        {
-            eventPool.Add(_event4);
-        }
-
-        // Chooses between potential events, or triggers a default event if
-        // there are none
-        if (eventPool.Count == 0)
-        {
-            PrepareEvent(_event0);
+            switch (cycleNumber)
+            {
+                case 0:
+                    PrepareEvent(_event5);
+                    break;
+                case 1:
+                    PrepareEvent(_event6);
+                    break;
+                case 2:
+                    PrepareEvent(_event7);
+                    break;
+                default:
+                    PrepareEvent(_event0);
+                    break;
+            }
         }
         else
         {
-            PrepareEvent(eventPool[Random.Range(0, eventPool.Count)]);
-            eventPool.Clear();
-        }
+            // Adds events to pool of potential events if their conditions are
+            // met
+            if (_harry.MoodVal >= 75 && !_event1.HasPlayed)
+            {
+                eventPool.Add(_event1);
+            }
+            if (_harry.MoodVal <= 25 && !_event2.HasPlayed)
+            {
+                eventPool.Add(_event2);
+            }
+            if (_fiona.MoodVal >= 75 && !_event3.HasPlayed)
+            {
+                eventPool.Add(_event3);
+            }
+            if (_fiona.MoodVal <= 25 && !_event4.HasPlayed)
+            {
+                eventPool.Add(_event4);
+            }
+
+            // Chooses between potential events, or triggers a default event
+            // if there are none
+            if (eventPool.Count == 0)
+            {
+                switch (cycleNumber)
+                {
+                    case 0:
+                        PrepareEvent(_event10);
+                        break;
+                    case 1:
+                        PrepareEvent(_event11);
+                        break;
+                    case 2:
+                        PrepareEvent(_event12);
+                        break;
+                    default:
+                        PrepareEvent(_event0);
+                        break;
+                }
+            }
+            else
+            {
+                PrepareEvent(eventPool[Random.Range(0, eventPool.Count)]);
+                eventPool.Clear();
+            }
+
+            // Advances daily progression
+            cycleNumber++;
+        }       
     }
 
     /// <summary>
@@ -124,6 +192,9 @@ public class EventManager : MonoBehaviour
         {
             Instantiate(go);
         }
+
+        // Prevents event from repeating
+        i.HasPlayed = true;
     }
 
 }

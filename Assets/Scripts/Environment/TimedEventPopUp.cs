@@ -20,6 +20,7 @@ public class TimedEventPopUp : MonoBehaviour
     // Time Management
     [SerializeField] TimeCycleScript _timeCycle;
     bool _wasDay = true;
+    public bool WasDay { get => _wasDay; set => _wasDay = value; }
     // Pop up objects
     [SerializeField] GameObject _popUpBG;
     [SerializeField] GameObject _popUpButton;
@@ -79,8 +80,8 @@ public class TimedEventPopUp : MonoBehaviour
         if (_wasDay)
         {
             // Evening events play in the order they are listed in the array
-            /*_text*/titleText.text = /*_eveningEvents*/eveningEventTitle[_eveningOrder];
-            _eveningOrder++;
+            ///*_text*/titleText.text = /*_eveningEvents*/eveningEventTitle[_eveningOrder];
+            //_eveningOrder++;
         }
         else
         {

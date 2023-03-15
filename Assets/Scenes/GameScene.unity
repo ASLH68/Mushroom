@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &36732023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1762,6 +1762,7 @@ GameObject:
   - component: {fileID: 871806830}
   - component: {fileID: 871806829}
   - component: {fileID: 871806828}
+  - component: {fileID: 871806831}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1782,6 +1783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _popUpObject: {fileID: 1410035670}
+  _eventManager: {fileID: 871806831}
 --- !u!114 &871806829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,7 +1796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59c90ebaaa9bda479509cd63088b285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cycleLength: 5
+  _cycleLength: 0.5
 --- !u!4 &871806830
 Transform:
   m_ObjectHideFlags: 0
@@ -1810,6 +1812,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &871806831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871806827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25eb69c7e7643a54f84e552ace81db95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _harry: {fileID: 1636962632}
+  _fiona: {fileID: 867424737}
+  _popUpText: {fileID: 1384115187}
+  _popUpObject: {fileID: 1410035670}
+  _harryPrefab: {fileID: 0}
+  _fionaPrefab: {fileID: 0}
+  _placeholderObj: {fileID: 5594778905499308603, guid: a14576393c0a9454ea2a89f394010d13,
+    type: 3}
 --- !u!1 &909112939 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3457020840890263506, guid: 0895171c550c125458882432fd64b91b,
@@ -3309,6 +3331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textObject: {fileID: 1384115185}
+  titleText: {fileID: 0}
   _timeCycle: {fileID: 871806828}
   _popUpBG: {fileID: 1395523076}
   _popUpButton: {fileID: 449703236}
@@ -3512,6 +3535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fiona
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134072144803815, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: m_TagString
+      value: npc2
       objectReference: {fileID: 0}
     - target: {fileID: 5646783584155630594, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -4914,6 +4942,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Harry
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134072144803815, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: m_TagString
+      value: npc1
       objectReference: {fileID: 0}
     - target: {fileID: 5646783584155630594, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
