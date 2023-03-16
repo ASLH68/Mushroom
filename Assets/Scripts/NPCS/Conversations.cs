@@ -33,6 +33,20 @@ public class Conversations
             {
                 if(followUpConvo.DecisionChoiceNum == DialogueUIController.main.CurrentDecision.ChoiceMade)
                 {
+                    // If the follow up convo is based on an interactable, it will set the follow up convo if the interaction is true.
+                    // Otherwise, it will return false. If it is not based on an interactable, it will only check the relative decision
+                    if(!followUpConvo.InteractableCheck.Equals(InteractablesManager.InteractableTypes.NONE))
+                    {
+                        if(InteractablesManager.main.CheckInteraction(followUpConvo.InteractableCheck))
+                        {
+                            NPCManager.main.CurrentNPC.SetNextConvoNum(followUpConvo.NextConvoNum);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
                     NPCManager.main.CurrentNPC.SetNextConvoNum(followUpConvo.NextConvoNum);
                     return true;
                 }

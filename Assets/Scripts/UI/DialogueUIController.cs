@@ -64,7 +64,7 @@ public class DialogueUIController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E) && _canTalk)
+        if(Input.GetKeyDown(KeyCode.E) && _canTalk && !InteractablesManager.main.ObjectInteraction)
         {
             _canTalk = false;
             UnlockCursor();
@@ -285,6 +285,7 @@ public class DialogueUIController : MonoBehaviour
                 for(int i = 0; i < _buttonChoices.Count; i++)
                 {
                     _buttonChoices[i].GetComponentInChildren<TextMeshProUGUI>().text = dec.Choices[i];
+                    _buttonChoices[i].gameObject.transform.SetSiblingIndex(Random.Range(0, 2));     // Randomly reorganized the button order in hierarchy so they appear in random orders.
                 }
                 ShowChoiceButtons();
                 hasDecision = true;
