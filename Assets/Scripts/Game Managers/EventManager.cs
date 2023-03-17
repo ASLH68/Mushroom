@@ -45,7 +45,9 @@ public class EventManager : MonoBehaviour
     Event _event12;
 
     // Event object sets
-    List<GameObject> _defaultObj;
+    [SerializeField] List<GameObject> _defaultObj;
+    [SerializeField] List<GameObject> _objs6;
+    [SerializeField] List<GameObject> _objs10;
 
     /// <summary>
     /// Start is called before the first frame update
@@ -72,12 +74,12 @@ public class EventManager : MonoBehaviour
         // Nightlies
         _event5 = new Event(5, "unlitFire", _defaultObj,
             "The fire needs to be lit");
-        _event6 = new Event(6, "fionaSkull", _defaultObj,
+        _event6 = new Event(6, "fionaSkull", _objs6,
             "Fiona found a skull on the ground");
         _event7 = new Event(7, "thunderstorm", _defaultObj,
             "A thunderstorm rages");
         // Dailies
-        _event10 = new Event(10, "fionaRing", _defaultObj,
+        _event10 = new Event(10, "fionaRing", _objs10,
             "Fiona has lost her ring");
         _event11 = new Event(11, "treeFall", _defaultObj,
             "A tree fell on your tent");
@@ -180,7 +182,8 @@ public class EventManager : MonoBehaviour
     void PrepareEvent(Event i)
     {
         // Destroys objects used by events
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("EventObject"))
+        foreach (GameObject go in
+                 GameObject.FindGameObjectsWithTag("EventObject"))
         {
             Destroy(go);
         }
