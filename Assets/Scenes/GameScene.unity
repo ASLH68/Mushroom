@@ -3422,6 +3422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
+<<<<<<< HEAD
       propertyPath: _conversations.Array.data[2]._continueConversation
       value: 1
       objectReference: {fileID: 0}
@@ -3429,6 +3430,10 @@ PrefabInstance:
         type: 3}
       propertyPath: _conversations.Array.data[4]._continueConversation
       value: 1
+=======
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.size
+      value: 0
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -3442,6 +3447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
+<<<<<<< HEAD
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3459,6 +3465,15 @@ PrefabInstance:
         type: 3}
       propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.size
       value: 3
+=======
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[0]._nextConvoNum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[1]._nextConvoNum
+      value: 7
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -3473,6 +3488,11 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
+      value: "Now I won\u2019t"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[3].Dialogue
       value: "Now I won\u2019t"
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
@@ -3492,6 +3512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
+<<<<<<< HEAD
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[0].Dialogue
       value: "I hope you\u2019re ready for a fun week of camping"
       objectReference: {fileID: 0}
@@ -3549,6 +3570,15 @@ PrefabInstance:
         type: 3}
       propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.data[2].Dialogue
       value: "Don\u2019t follow me when I go on a run later"
+=======
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[0]._decisionChoiceNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[1]._decisionChoiceNum
+      value: 3
+>>>>>>> main
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
@@ -3558,6 +3588,11 @@ PrefabInstance:
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[3].CurrentEmotion
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4164134071653653083, guid: ffb8ecf7ee0b1b946aeaa41391f3080f,
