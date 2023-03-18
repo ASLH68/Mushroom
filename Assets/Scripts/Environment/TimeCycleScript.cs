@@ -26,6 +26,7 @@ public class TimeCycleScript : MonoBehaviour
 
     // Daily pop up display (added by Peter)
     [SerializeField] TimedEventPopUp _popUpObject;
+    [SerializeField] EventManager _eventManager;
 
     private void Awake()
     {
@@ -43,7 +44,7 @@ public class TimeCycleScript : MonoBehaviour
     {
         _light = GameObject.FindObjectOfType<Light>();
         _cycleLength = GameController.main.CycleLength;
-        StartCoroutine("DayCycleController");
+        //StartCoroutine("DayCycleController");
     }
 
     public IEnumerator DayCycleController()
@@ -59,7 +60,7 @@ public class TimeCycleScript : MonoBehaviour
 
             yield return null;
         }
-        _popUpObject.ActivatePopUp();
+        _eventManager.SelectEvent();
     }
 
     public IEnumerator NightCycleController()
@@ -75,7 +76,7 @@ public class TimeCycleScript : MonoBehaviour
 
             yield return null;
         }
-        _popUpObject.ActivatePopUp();
+        _eventManager.SelectEvent();
     }
 
 }

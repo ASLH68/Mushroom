@@ -16,10 +16,11 @@ public class TimedEventPopUp : MonoBehaviour
     // Vars
     // Text to alter
     [SerializeField] GameObject _textObject;
-    TextMeshProUGUI /*_text*/titleText;
+    public TextMeshProUGUI /*_text*/titleText;
     // Time Management
     [SerializeField] TimeCycleScript _timeCycle;
     bool _wasDay = true;
+    public bool WasDay { get => _wasDay; set => _wasDay = value; }
     // Pop up objects
     [SerializeField] GameObject _popUpBG;
     [SerializeField] GameObject _popUpButton;
@@ -79,14 +80,13 @@ public class TimedEventPopUp : MonoBehaviour
         if (_wasDay)
         {
             // Evening events play in the order they are listed in the array
-            /*_text*/titleText.text = /*_eveningEvents*/eveningEventTitle[_eveningOrder];
-            _eveningOrder++;
+            ///*_text*/titleText.text = /*_eveningEvents*/eveningEventTitle[_eveningOrder];
+            //_eveningOrder++;
         }
         else
         {
-            titleText.text = morningEventDescription[_morningSelection];
-            _morningSelection++;
-            /* IMPLEMENT ONCE EVENT SYSTEM IS IN PLACE */
+            /*titleText.text = morningEventDescription[_morningSelection];
+            _morningSelection++;*/
         }
         _textObject.GetComponent<CanvasRenderer>().SetAlpha(100);
 
