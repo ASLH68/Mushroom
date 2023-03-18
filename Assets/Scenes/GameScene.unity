@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040912395, g: 0.0036873834, b: 0.0018427754, a: 1}
+  m_IndirectSpecularColor: {r: 0.004101143, g: 0.003698667, b: 0.0018515392, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -24059,6 +24059,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2691019821978246795, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
+      objectReference: {fileID: 0}
     - target: {fileID: 2691019821978246805, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
         type: 3}
       propertyPath: m_RootOrder
@@ -24188,6 +24193,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3193760396486440948, guid: f77bde456c507a749bed607fa95558ef,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f77bde456c507a749bed607fa95558ef, type: 3}
 --- !u!1001 &992749604569311313
@@ -24262,6 +24272,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3149332162850731290, guid: 40d658d63db415e45ab0e7f37011a4ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40d658d63db415e45ab0e7f37011a4ee, type: 3}
 --- !u!1001 &1219786656217453512
@@ -24335,6 +24350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936099808289436829, guid: d032c84a7993c374587090466c23f27e,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d032c84a7993c374587090466c23f27e, type: 3}
@@ -24457,6 +24477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 801113499441938064, guid: 9199b0eb961e1274e8853de688ca14b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9199b0eb961e1274e8853de688ca14b8, type: 3}
@@ -24850,6 +24875,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7529178781869670393, guid: 4e942dc9a87129c46acfddfc48f77a2e,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e942dc9a87129c46acfddfc48f77a2e, type: 3}
 --- !u!1001 &8273146135499038174
@@ -24868,6 +24898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098514876995659978, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
       objectReference: {fileID: 0}
     - target: {fileID: 6098514876995659988, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
         type: 3}
@@ -24997,6 +25032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774447014347916990, guid: 50b227a65f38aa94a99378e50ad5c4ce,
+        type: 3}
+      propertyPath: m_TagString
+      value: EventObject
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50b227a65f38aa94a99378e50ad5c4ce, type: 3}

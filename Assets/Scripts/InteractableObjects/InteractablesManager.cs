@@ -42,7 +42,7 @@ public class InteractablesManager : MonoBehaviour
     void Start()
     {
         _interactablesDictionary = new Dictionary<InteractableTypes, InteractableObject>();
-        _interactableObjs = GameObject.FindGameObjectsWithTag("InteractableObj");
+        _interactableObjs = GameObject.FindGameObjectsWithTag("EventObject");
 
         foreach(GameObject obj in _interactableObjs)
         {
