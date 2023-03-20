@@ -7,6 +7,7 @@
 *****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,10 +15,26 @@ public class MoodBarUI : MonoBehaviour
 {
     [SerializeField] private Image _emotionMeterIMG;
     [SerializeField] private NPCClass _npcReference;
+    [SerializeField] private int whichNPC;
 
     private void Start()
     {
+        GetNPC();
         FillEmotionMeter();
+    }
+
+    public void GetNPC()
+    {
+        string npc = "";
+        if(whichNPC == 1)
+        {
+            npc = "npc1";
+        }
+        else if(whichNPC == 2)
+        {
+            npc = "npc2";
+        }
+        _npcReference = GameObject.FindGameObjectWithTag(npc).GetComponentInChildren<NPCClass>();
     }
 
     /// <summary>

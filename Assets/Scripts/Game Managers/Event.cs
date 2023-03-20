@@ -24,7 +24,9 @@ public class Event
         set => _displayText = value; }
     public List<GameObject> EventObjects { get => _eventObjects;
         set => _eventObjects = value; }
-    public bool HasPlayed { get => _hasPlayed; set => _hasPlayed = value; }
+    public bool HasPlayed { get => _hasPlayed; 
+        set => _hasPlayed = value; }
+    public int EventID { get => _ID; }
 
     /// <summary>
     /// Default Constructor

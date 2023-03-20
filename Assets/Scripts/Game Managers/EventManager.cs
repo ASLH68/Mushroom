@@ -25,6 +25,10 @@ public class EventManager : MonoBehaviour
     [SerializeField] GameObject _fionaPrefab;
     [SerializeField] GameObject _placeholderObj;
 
+    // NPCs to setactive
+    GameObject currentEventNPCs;
+    [SerializeField] List<GameObject> eventNPC = new List<GameObject>();
+
     // Events
     // Default
     Event _event0;
@@ -187,6 +191,18 @@ public class EventManager : MonoBehaviour
         {
             Destroy(go);
         }
+
+        // Gets the correct NPCs into place
+        if(currentEventNPCs != null)
+        {
+            currentEventNPCs.SetActive(false);
+        }
+        else
+        {
+            eventNPC[0].SetActive(false);
+        }
+        currentEventNPCs = eventNPC[i.EventID];
+        currentEventNPCs.SetActive(true);
 
         // Sets display text and new objects
         _popUpText.text = i.DisplayText;
