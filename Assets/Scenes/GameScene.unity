@@ -1274,6 +1274,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2053272098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &77098027 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1219067635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1d3a31debd6a54c90a2e19dd170091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &89899709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,6 +3335,33 @@ MonoBehaviour:
     - I got the comic!
     - Do you enjoy these?
     - Here's that nerd book you wanted
+    _choiceMade: 0
+  - _name: Cycle 1 - Night - Fiona - C0
+    _associatedConversation: 3
+    _associatedNPC: {fileID: 77098027}
+    _weight: 30
+    Choices:
+    - Happy Option
+    - Neutral Option
+    - Sad Option
+    _choiceMade: 0
+  - _name: Cycle 1 - Night - Fiona - C1
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 77098027}
+    _weight: 30
+    Choices:
+    - Happy Option
+    - Neutral Option
+    - Sad Option
+    _choiceMade: 0
+  - _name: Cycle 2 - Day - Fiona - C0
+    _associatedConversation: 0
+    _associatedNPC: {fileID: 77098027}
+    _weight: 30
+    Choices:
+    - Happy Option
+    - Neutral Option
+    - Sad Option
     _choiceMade: 0
 --- !u!4 &242865578
 Transform:
@@ -17038,6 +17077,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -17049,7 +17093,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: Happy dialogue
+      value: Happy Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -29977,6 +30021,61 @@ PrefabInstance:
       propertyPath: _moodBarGameObj
       value: 
       objectReference: {fileID: 909112939}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
+      value: Happy Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
+      value: Neutral Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
+      value: Sad Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
+      value: Happy Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
+      value: Neutral Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
+      value: Sad Dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4be3cc9ae9226854cb055ee05ae3d5a8, type: 3}
 --- !u!4 &2061096130 stripped
