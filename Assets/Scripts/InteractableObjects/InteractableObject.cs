@@ -53,6 +53,7 @@ public class InteractableObject : MonoBehaviour
             
             if(_destroyOnPickUp)
             {
+                InteractablesManager.main.ObjectInteraction = false;
                 gameObject.SetActive(false);
             }
         }           
