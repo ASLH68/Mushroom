@@ -6414,7 +6414,7 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[1]._followUpConvos.Array.data[0]._interactableCheck
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
