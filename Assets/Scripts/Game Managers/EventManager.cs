@@ -21,8 +21,8 @@ public class EventManager : MonoBehaviour
     [SerializeField] TimedEventPopUp _popUpObject;
 
     // Objects to instantiate
-    [SerializeField] GameObject _harryPrefab;
-    [SerializeField] GameObject _fionaPrefab;
+    GameObject _harryPrefab;
+    GameObject _fionaPrefab;
     [SerializeField] GameObject _placeholderObj;
 
     // NPCs to setactive
@@ -49,9 +49,11 @@ public class EventManager : MonoBehaviour
     Event _event12;
 
     // Event object sets
-    [SerializeField] List<GameObject> _defaultObj;
+    [SerializeField] List<GameObject> _defaultObj; // Stuff that goes into the base scenes
+    [SerializeField] List<GameObject> _objs5;
     [SerializeField] List<GameObject> _objs6;
     [SerializeField] List<GameObject> _objs10;
+    [SerializeField] List<GameObject> _objs11;
 
     /// <summary>
     /// Start is called before the first frame update
@@ -76,7 +78,7 @@ public class EventManager : MonoBehaviour
                             "Fiona is happy today");
         _event4 = new Event(4, "fionaSad", _defaultObj, "Fiona is sad today");
         // Nightlies
-        _event5 = new Event(5, "unlitFire", _defaultObj,
+        _event5 = new Event(5, "unlitFire", _objs5,
             "The fire needs to be lit");
         _event6 = new Event(6, "fionaSkull", _objs6,
             "Fiona found a skull on the ground");
@@ -85,7 +87,7 @@ public class EventManager : MonoBehaviour
         // Dailies
         _event10 = new Event(10, "fionaRing", _objs10,
             "Fiona has lost her ring");
-        _event11 = new Event(11, "treeFall", _defaultObj,
+        _event11 = new Event(11, "treeFall", _objs11,
             "A tree fell on your tent");
         _event12 = new Event(12, "foodMissing", _defaultObj,
             "You wake up to find your food missing"); // "GASP!" -Sena Xenoblade
