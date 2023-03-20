@@ -5,6 +5,7 @@
 //
 // Brief Description : This class manages the NPCs.
 *****************************************************************************/
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,11 @@ public class NPCManager : MonoBehaviour
 
     private NPCClass _currentNPC;   // NPC currently being interacted with
     public NPCClass CurrentNPC => _currentNPC;
+
+    // Gonna have to make this better; - It's messy because it has to start with the neutral val here
+    // Currently used for transfering npc emotion, between events
+    [NonSerialized] public int fionaMood = 50;
+    [NonSerialized] public int harryMood = 50;
 
     #region Awake & Start
     private void Awake()

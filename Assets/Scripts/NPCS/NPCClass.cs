@@ -21,6 +21,9 @@ public class NPCClass : MonoBehaviour
     private bool _isInteractable;
     public bool IsInteractable => _isInteractable;
 
+    // NPCManager var
+    private NPCManager _npcManager;
+
     #region Emotion vars
     /// <summary>
     /// Possible NPC Emotions
@@ -84,7 +87,7 @@ public class NPCClass : MonoBehaviour
         {
             CurrentConversation = _conversations[_conversationNum];
             CurrentConvoDialogue = CurrentConversation._conversationDialogues;
-        }      
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -159,5 +162,48 @@ public class NPCClass : MonoBehaviour
     public void SetNextConvoNum(int num)
     {
         _conversationNum = num;
+    }
+
+    /// <summary>
+    /// This gets the emotion of the same npc from the previous event
+    /// </summary>
+    public void GetManagerEmotion()
+    {
+        // Using transform.parent.tag because this script is attatched to the child of the object with the tag
+        if (gameObject.transform.parent.tag == "npc2")
+        {
+            _moodVal = _npcManager.fionaMood;
+        }
+        else if (gameObject.transform.parent.tag == "npc1")
+        {
+            _moodVal = _npcManager.harryMood;
+        }
+    }
+
+    /// <summary>
+    /// This will find the NPC manager so the script can use it
+    /// 
+    /// It will also get the previous npcs emotion from the manager
+    /// </summary>
+    private void OnEnable()
+    {
+        _npcManager = FindObjectOfType<NPCManager>();
+
+        GetManagerEmotion();
+    }
+
+    /// <summary>
+    /// Will store the emotion in the parent, after the event is over
+    /// </summary>
+    private void OnDisable()
+    {
+        if(gameObject.transform.parent.tag == "npc2")
+        {
+            _npcManager.fionaMood = _moodVal;
+        }
+        else if(gameObject.transform.parent.tag == "npc1")
+        {
+            _npcManager.harryMood = _moodVal;
+        }
     }
 }
