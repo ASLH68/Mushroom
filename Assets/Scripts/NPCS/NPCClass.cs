@@ -161,7 +161,10 @@ public class NPCClass : MonoBehaviour
     /// <param name="num"></param>
     public void SetNextConvoNum(int num)
     {
+        DialogueUIController.main.HideChoiceButtons();
         _conversationNum = num;
+        CurrentConversation = _conversations[_conversationNum];
+        CurrentConvoDialogue = CurrentConversation._conversationDialogues;
     }
 
     /// <summary>
