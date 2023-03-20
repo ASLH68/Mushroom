@@ -9331,7 +9331,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &701773894
 RectTransform:
@@ -12153,8 +12153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25eb69c7e7643a54f84e552ace81db95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _harry: {fileID: 0}
-  _fiona: {fileID: 0}
   _popUpText: {fileID: 1384115187}
   _popUpObject: {fileID: 1410035670}
   _placeholderObj: {fileID: 5594778905499308603, guid: a14576393c0a9454ea2a89f394010d13,
