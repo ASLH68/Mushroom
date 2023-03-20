@@ -9,7 +9,6 @@ TagManager:
   - npc1
   - npc2
   - EventObject
-  - InteractableObj
   layers:
   - Default
   - TransparentFX

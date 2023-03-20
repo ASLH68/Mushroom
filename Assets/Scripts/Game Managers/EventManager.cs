@@ -185,11 +185,17 @@ public class EventManager : MonoBehaviour
     /// <param name="i">Event to implement</param>
     void PrepareEvent(Event i)
     {
+        // Prevents event from repeating
+        i.HasPlayed = true;
+
         // Destroys objects used by events
         foreach (GameObject go in
                  GameObject.FindGameObjectsWithTag("EventObject"))
         {
-            Destroy(go);
+            if(!i.EventObjects.Contains(go))
+            {
+                go.SetActive(false);
+            }
         }
 
         // Gets the correct NPCs into place
@@ -205,15 +211,12 @@ public class EventManager : MonoBehaviour
         currentEventNPCs.SetActive(true);
 
         // Sets display text and new objects
+        foreach (GameObject go in i.EventObjects)
+        {
+            go.SetActive(true);
+        }
         _popUpText.text = i.DisplayText;
         _popUpObject.ActivatePopUp();
-        foreach(GameObject go in i.EventObjects)
-        {
-            Instantiate(go);
-        }
-
-        // Prevents event from repeating
-        i.HasPlayed = true;
     }
 
 }
