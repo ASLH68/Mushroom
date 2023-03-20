@@ -2684,15 +2684,6 @@ MonoBehaviour:
     - I'm busy
     - "You\u2019ll have to sort this out on your own."
     _choiceMade: 0
-  - _name: Cycle 1 - Day - Harry - C2.0
-    _associatedConversation: 2
-    _associatedNPC: {fileID: 1445528011}
-    _weight: 30
-    Choices:
-    - I certainly am
-    - "I\u2019ve never been camping before"
-    - "I won\u2019t"
-    _choiceMade: 3
   - _name: Cycle 1 - Day - Harry - C3.0
     _associatedConversation: 3
     _associatedNPC: {fileID: 1445528011}
@@ -6229,7 +6220,7 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[1]._continueConversation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
@@ -6423,7 +6414,7 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[1]._followUpConvos.Array.data[0]._interactableCheck
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
@@ -10207,12 +10198,10 @@ MonoBehaviour:
   - {fileID: 1003901730}
   - {fileID: 1857628112}
   - {fileID: 1199439260}
+  - {fileID: 823162754}
+  - {fileID: 1024436895}
   - {fileID: 334487006}
   - {fileID: 789009065}
-  - {fileID: 1408852251}
-  - {fileID: 1024436895}
-  - {fileID: 109472259}
-  - {fileID: 823162754}
   _defaultObj: []
   _objs6:
   - {fileID: 2577736707352372058, guid: f7191d074095c96408996dc37e68322d, type: 3}

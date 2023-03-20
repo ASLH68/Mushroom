@@ -210,6 +210,18 @@ public class EventManager : MonoBehaviour
         currentEventNPCs = eventNPC[i.EventID];
         currentEventNPCs.SetActive(true);
 
+        foreach(Transform child in currentEventNPCs.transform)
+        {
+            if(child.CompareTag("npc1"))
+            {
+                _harry = child.gameObject.GetComponentInChildren<NPCClass>();
+            }
+            else if(child.CompareTag("npc2"))
+            {
+                _fiona = child.gameObject.GetComponentInChildren<NPCClass>();
+            }
+        }
+
         // Sets display text and new objects
         foreach (GameObject go in i.EventObjects)
         {
