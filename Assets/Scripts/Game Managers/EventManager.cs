@@ -47,6 +47,7 @@ public class EventManager : MonoBehaviour
     Event _event10;
     Event _event11;
     Event _event12;
+    Event _event13;
 
     // Event object sets
     [SerializeField] List<GameObject> _defaultObj;
@@ -77,18 +78,20 @@ public class EventManager : MonoBehaviour
         _event4 = new Event(4, "fionaSad", _defaultObj, "Fiona is sad today");
         // Nightlies
         _event5 = new Event(5, "unlitFire", _defaultObj,
-            "The fire needs to be lit");
+                            "The fire needs to be lit");
         _event6 = new Event(6, "fionaSkull", _objs6,
-            "Fiona found a skull on the ground");
+                            "Fiona found a skull on the ground");
         _event7 = new Event(7, "thunderstorm", _defaultObj,
-            "A thunderstorm rages");
+                            "A thunderstorm rages");
         // Dailies
         _event10 = new Event(10, "fionaRing", _objs10,
-            "Fiona has lost her ring");
+                             "Fiona has lost her ring");
         _event11 = new Event(11, "treeFall", _defaultObj,
-            "A tree fell on your tent");
+                             "A tree fell on your tent");
         _event12 = new Event(12, "foodMissing", _defaultObj,
-            "You wake up to find your food missing"); // "GASP!" -Sena Xenoblade
+                             "You wake up to find your food missing"); // "GASP!" -Sena Xenoblade
+        _event13 = new Event(13, "ending", _defaultObj,
+                             "You begin packing up to return home.");
     }
 
     /// <summary>
