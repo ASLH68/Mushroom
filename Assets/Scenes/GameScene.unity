@@ -2666,6 +2666,33 @@ MonoBehaviour:
     - "I\u2019ve never been camping before"
     - "I won\u2019t"
     _choiceMade: 3
+  - _name: Cycle 1 - Day - Harry - C1
+    _associatedConversation: 0
+    _associatedNPC: {fileID: 1445528011}
+    _weight: 30
+    Choices:
+    - "\u201CWow, what a bad turn of events!\u201D"
+    - It does suck
+    - Karma, perhaps?
+    _choiceMade: 0
+  - _name: Cycle 1 - Day - Harry - C1.1
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 1762168452}
+    _weight: 30
+    Choices:
+    - I certainly am
+    - "I\u2019ve never been camping before"
+    - "I won\u2019t"
+    _choiceMade: 3
+  - _name: Cycle 2 - Day - Harry - C1
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 1762168452}
+    _weight: 30
+    Choices:
+    - I certainly am
+    - "I\u2019ve never been camping before"
+    - "I won\u2019t"
+    _choiceMade: 3
 --- !u!4 &242865578
 Transform:
   m_ObjectHideFlags: 0
@@ -6144,17 +6171,117 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._continueConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._continueConversation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._followUpConvos.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._followUpConvos.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._followUpConvos.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._followUpConvos.Array.data[0]._nextConvoNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._followUpConvos.Array.data[0]._nextConvoNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
+      value: This sucks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
+      value: This sucks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
+      value: This sucks
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
+      value: "\u201CLadies and gentlemen, camping! Ugh, what luck am I right?\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
+      value: "\u201CWhat an awful turn of events, eh?\u201D\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
+      value: "\u201C...What did I do to deserve this.\u201D\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[0].Dialogue
+      value: "\u201CYou\u2019re too busy to help? Oh well, I get it.\u201D\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
+      value: "\u201CToo busy? Ok. I can deal with it...I guess.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
+      value: "\u201COf course you\u2019re busy, all you do is leech anyways.\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
@@ -6169,6 +6296,26 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].CurrentEmotion
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9889,8 +10036,6 @@ MonoBehaviour:
   - {fileID: 1024436895}
   - {fileID: 109472259}
   - {fileID: 823162754}
-  emotionMeter1: {fileID: 1429844807}
-  emotionMeter2: {fileID: 1386076082}
   _defaultObj: []
   _objs6:
   - {fileID: 2577736707352372058, guid: f7191d074095c96408996dc37e68322d, type: 3}
@@ -17608,6 +17753,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442933927}
   m_CullTransparentMesh: 1
+--- !u!114 &1445528011 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 579597317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1d3a31debd6a54c90a2e19dd170091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1447228588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21753,6 +21910,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 271659980}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1762168452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2061096129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1d3a31debd6a54c90a2e19dd170091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1765501544
 PrefabInstance:
   m_ObjectHideFlags: 0
