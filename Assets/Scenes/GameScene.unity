@@ -1398,6 +1398,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2416140440825151618, guid: aa38d7b0e367ecc4aac915dcfe957879, type: 3}
+--- !u!114 &94712146 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1749239737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1d3a31debd6a54c90a2e19dd170091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &98064614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3317,9 +3329,18 @@ MonoBehaviour:
     - Neutral Option
     - Sad Option
     _choiceMade: 0
+  - _name: Cycle 2 - Day - Harry - C0
+    _associatedConversation: 0
+    _associatedNPC: {fileID: 1661368079}
+    _weight: 30
+    Choices:
+    - I'll find it!
+    - I don't know where to start.
+    - I couldn't care to look.
+    _choiceMade: 0
   - _name: Cycle 2 - Day - Fiona - C0
     _associatedConversation: 0
-    _associatedNPC: {fileID: 77098027}
+    _associatedNPC: {fileID: 431140655}
     _weight: 30
     Choices:
     - Guess what I have?
@@ -3328,7 +3349,7 @@ MonoBehaviour:
     _choiceMade: 0
   - _name: Cycle 2 - Day - Fiona - C1
     _associatedConversation: 3
-    _associatedNPC: {fileID: 1740003484}
+    _associatedNPC: {fileID: 431140655}
     _weight: 30
     Choices:
     - Here it is
@@ -3343,15 +3364,6 @@ MonoBehaviour:
     - Fiona found a skull, we were hoping you could identify it!
     - Fiona and I found a skull, what is it?
     - Tell me what this skull is.
-    _choiceMade: 0
-  - _name: Cycle 2 - Day - Harry - C0
-    _associatedConversation: 0
-    _associatedNPC: {fileID: 1661368079}
-    _weight: 30
-    Choices:
-    - I'll find it!
-    - I don't know where to start.
-    - I couldn't care to look.
     _choiceMade: 0
   - _name: Cycle 2 - Night - Harry - C1
     _associatedConversation: 0
@@ -3478,6 +3490,42 @@ MonoBehaviour:
     - I have the axe!
     - Axin time
     - I finally got that stupid axe
+    _choiceMade: 0
+  - _name: Cycle 3 - Night - Harry - C0
+    _associatedConversation: 0
+    _associatedNPC: {fileID: 870358078}
+    _weight: 30
+    Choices:
+    - "It\u2019s raining. You should go inside before you get wet."
+    - "It\u2019s raining, we should go inside."
+    - "I don\u2019t really care what you do, but I\u2019m going inside."
+    _choiceMade: 0
+  - _name: Cycle 3 - Night - Harry - C1
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 870358078}
+    _weight: 30
+    Choices:
+    - What are your thoughts on the trip so far?
+    - Got any thoughts so far?
+    - I bet you haven't been having a good of a time as me.
+    _choiceMade: 0
+  - _name: Cycle 3 - Night - Fiona - C0
+    _associatedConversation: 0
+    _associatedNPC: {fileID: 94712146}
+    _weight: 30
+    Choices:
+    - "It\u2019s raining. You should go inside before you get wet."
+    - "It\u2019s raining, we should go inside."
+    - "I don\u2019t really care what you do, but I\u2019m going inside."
+    _choiceMade: 0
+  - _name: Cycle 3 - Night - Fiona - C1
+    _associatedConversation: 1
+    _associatedNPC: {fileID: 94712146}
+    _weight: 30
+    Choices:
+    - What are your thoughts on the trip so far?
+    - Got any thoughts so far?
+    - "I don\u2019t really care what you do, but I\u2019m going inside."
     _choiceMade: 0
 --- !u!4 &242865578
 Transform:
@@ -5760,6 +5808,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1483097712}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &431140655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1893425276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1d3a31debd6a54c90a2e19dd170091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &431934484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12002,6 +12062,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869889883}
   m_CullTransparentMesh: 1
+--- !u!114 &870358078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2021012548}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1d3a31debd6a54c90a2e19dd170091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &871135723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
@@ -25346,6 +25418,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -25577,7 +25654,27 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationNum
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._continueConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._continueConversation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -25591,33 +25688,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: Happy dialogue
+      value: I can't outrun this!
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: Neutral Dialogue
+      value: I'm not sure how long this will last
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
-      value: Sad Dialogue
+      value: My last camping trip was ruined because of rain
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
-      value: Happy dialogue
+      value: Nah, I appreciate the gesture but I like the rain.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
-      value: Neutral Dialogue
+      value: "No, I think I\u2019ll stay out here."
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
-      value: Sad Dialogue
+      value: "It\u2019s none of your business what I do"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[0].Dialogue
+      value: "You\u2019ve been really helpful throughout this whole trip. Thanks
+        again for finding my ring by the way."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
+      value: Trip has gone well despite all the stuff I guess, pretty mundane.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
+      value: "Would be a lot better if you weren\u2019t here but\u2026oh well."
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -25637,6 +25755,16 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].CurrentEmotion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].CurrentEmotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].CurrentEmotion
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -29863,6 +29991,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
+      propertyPath: _conversations.Array.data[1]._conversationNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._continueConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[1]._continueConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -29879,47 +30027,49 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: Happy Dialogue
+      value: Clouds are such interesting forces of nature, the one above us is a
+        cumulonimbus cloud.
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: Neutral Dialogue
+      value: Cumulonimbuses can be frightening
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
-      value: Sad Dialogue
+      value: You better not think I'm scared of a thunderstorm
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
-      value: Happy Dialogue
+      value: Yeah, I should probably head in the tent, thanks!
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
-      value: Neutral Dialogue
+      value: Yep, let's head inside.
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
-      value: Sad Dialogue
+      value: ...Thanks captain obvious
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[0].Dialogue
-      value: Happy Dialogue
+      value: "Despite the trials we\u2019ve been through I\u2019ve had a great time
+        with you!"
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
-      value: Neutral Dialogue
+      value: "It\u2019s been fine, even with all the stuff that\u2019s happened"
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
-      value: Sad Dialogue
+      value: "Frankly it\u2019s been awful. I am TIRED of you."
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
