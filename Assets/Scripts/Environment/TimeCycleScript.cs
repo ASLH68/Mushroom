@@ -24,9 +24,16 @@ public class TimeCycleScript : MonoBehaviour
 
     private float _cycleLength;
 
+    public float _speed = 0.5f;
+
+    private bool _isPaused = false;
+
     // Daily pop up display (added by Peter)
     [SerializeField] TimedEventPopUp _popUpObject;
     [SerializeField] EventManager _eventManager;
+
+    private float _cyclePercentage;
+    private IEnumerator _currentCycle;
 
     private void Awake()
     {
@@ -43,40 +50,58 @@ public class TimeCycleScript : MonoBehaviour
     private void Start()
     {
         _light = GameObject.FindObjectOfType<Light>();
-        _cycleLength = GameController.main.CycleLength;
-        //StartCoroutine("DayCycleController");
+        _cycleLength = GameController.main.CycleLength * 60f;    //Turns user defined cycle length into minutes
     }
 
     public IEnumerator DayCycleController()
     {
-        float _cyclePercentage = 0;
-
+        _currentCycle = DayCycleController();
         while (_cyclePercentage < _cycleLength/2)
         {
-            //_light.transform.Rotate(new Vector3(1f, 0f, 0f));
-            _light.transform.eulerAngles = Vector3.Lerp(_dayCycleStartPos, _dayCycleEndPos, _cyclePercentage / (_cycleLength/2));
+            if (!_isPaused)
+            {
+                _light.transform.eulerAngles = Vector3.Lerp(_dayCycleStartPos, _dayCycleEndPos, _cyclePercentage / (_cycleLength / 2));
 
-            _cyclePercentage += Time.deltaTime;
+                _cyclePercentage += Time.deltaTime * _speed;
+            }
 
             yield return null;
         }
+        _cyclePercentage = 0;
         _eventManager.SelectEvent();
     }
 
     public IEnumerator NightCycleController()
     {
-        float _cyclePercentage = 0;
-
+        _currentCycle = NightCycleController();
         while (_cyclePercentage < _cycleLength/2)
         {
-            //_light.transform.Rotate(new Vector3(1f, 0f, 0f));
-            _light.transform.eulerAngles = Vector3.Lerp(_nightCycleStartPos, _nightCycleEndPos, _cyclePercentage/(_cycleLength/2));
+            if (!_isPaused)
+            {
+                _light.transform.eulerAngles = Vector3.Lerp(_nightCycleStartPos, _nightCycleEndPos, _cyclePercentage / (_cycleLength / 2));
 
-            _cyclePercentage += Time.deltaTime;
+                _cyclePercentage += Time.deltaTime * _speed;
+            }
 
             yield return null;
         }
+        _cyclePercentage = 0;
         _eventManager.SelectEvent();
     }
 
+    /// <summary>
+    /// Pauses the time cycle
+    /// </summary>
+    public void PauseCycle()
+    {
+        _isPaused = true;
+    }
+
+    /// <summary>
+    /// Resumes the current time cycle
+    /// </summary>
+    public void ResumeCycle()
+    {
+        _isPaused = false;
+    }
 }

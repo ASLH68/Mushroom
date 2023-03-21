@@ -102,7 +102,7 @@ public class NPCClass : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag.Equals("Player") && DialogueUIController.main.CanTalk)
+        if (other.tag.Equals("Player") && DialogueUIController.main.CanTalk)
         {
             DialogueUIController.main.SetCanTalk(false);
             DialogueUIController.main.HideInteractKey();

@@ -66,6 +66,7 @@ public class DialogueUIController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && _canTalk && !InteractablesManager.main.ObjectInteraction)
         {
+            TimeCycleScript.main.PauseCycle();
             _canTalk = false;
             UnlockCursor();
             FirstPersonController.main.IsControllable = false;
@@ -223,6 +224,7 @@ public class DialogueUIController : MonoBehaviour
     /// </summary>
     public void LeaveNPC()
     {
+        TimeCycleScript.main.ResumeCycle();
         _canTalk = true;
         LockCursor();
         FirstPersonController.main.IsControllable = true;

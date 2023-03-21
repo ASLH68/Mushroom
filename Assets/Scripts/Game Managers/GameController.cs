@@ -41,7 +41,5 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Turns user defined cycle length into minutes
-        _cycleLength *= 60;
     }
 }
