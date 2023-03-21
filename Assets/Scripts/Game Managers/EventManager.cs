@@ -15,8 +15,8 @@ public class EventManager : MonoBehaviour
 {
     // Vars
     int cycleNumber = 0;
-    [SerializeField] NPCClass _harry;
-    [SerializeField] NPCClass _fiona;
+    NPCClass _harry;
+    NPCClass _fiona;
     [SerializeField] TextMeshProUGUI _popUpText;
     [SerializeField] TimedEventPopUp _popUpObject;
 
@@ -47,6 +47,7 @@ public class EventManager : MonoBehaviour
     Event _event10;
     Event _event11;
     Event _event12;
+    Event _event13;
 
     // Event object sets
     [SerializeField] List<GameObject> _defaultObj; // Stuff that goes into the base scenes
@@ -81,16 +82,18 @@ public class EventManager : MonoBehaviour
         _event5 = new Event(5, "unlitFire", _objs5,
             "The fire needs to be lit");
         _event6 = new Event(6, "fionaSkull", _objs6,
-            "Fiona found a skull on the ground");
+                            "Fiona found a skull on the ground");
         _event7 = new Event(7, "thunderstorm", _defaultObj,
-            "A thunderstorm rages");
+                            "A thunderstorm rages");
         // Dailies
         _event10 = new Event(10, "fionaRing", _objs10,
             "Fiona has lost her ring");
         _event11 = new Event(11, "treeFall", _objs11,
             "A tree fell on your tent");
         _event12 = new Event(12, "foodMissing", _defaultObj,
-            "You wake up to find your food missing"); // "GASP!" -Sena Xenoblade
+                             "You wake up to find your food missing"); // "GASP!" -Sena Xenoblade
+        _event13 = new Event(13, "ending", _defaultObj,
+                             "You begin packing up to return home.");
     }
 
     /// <summary>
@@ -130,7 +133,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            // Adds events to pool of potential events if their conditions are
+            /*// Adds events to pool of potential events if their conditions are
             // met
             if (_harry.MoodVal >= 75 && !_event1.HasPlayed)
             {
@@ -147,7 +150,7 @@ public class EventManager : MonoBehaviour
             if (_fiona.MoodVal <= 25 && !_event4.HasPlayed)
             {
                 eventPool.Add(_event4);
-            }
+            }*/
 
             // Chooses between potential events, or triggers a default event
             // if there are none
