@@ -23,6 +23,7 @@ public class TimeCycleScript : MonoBehaviour
     private Vector3 _dayCycleEndPos = new Vector3(195f, -30f, 0f);
 
     private float _cycleLength;
+    public float CycleLength { get => _cycleLength; }
 
     public float _speed = 0.5f;
 
@@ -32,8 +33,11 @@ public class TimeCycleScript : MonoBehaviour
     [SerializeField] TimedEventPopUp _popUpObject;
     [SerializeField] EventManager _eventManager;
 
-    private float _cyclePercentage;
-    private IEnumerator _currentCycle;
+    // Campfire object (Added by Peter)
+    //[SerializeField] GameObject _campfire;
+
+    public float cyclePercentage;
+    [SerializeField] private IEnumerator _currentCycle;
 
     private void Awake()
     {
@@ -55,38 +59,41 @@ public class TimeCycleScript : MonoBehaviour
 
     public IEnumerator DayCycleController()
     {
+        cyclePercentage = 0;
         _currentCycle = DayCycleController();
-        while (_cyclePercentage < _cycleLength/2)
+        while (cyclePercentage < _cycleLength/2)
         {
             if (!_isPaused)
             {
-                _light.transform.eulerAngles = Vector3.Lerp(_dayCycleStartPos, _dayCycleEndPos, _cyclePercentage / (_cycleLength / 2));
+                _light.transform.eulerAngles = Vector3.Lerp(_dayCycleStartPos, _dayCycleEndPos, cyclePercentage / (_cycleLength / 2));
 
-                _cyclePercentage += Time.deltaTime;
+                cyclePercentage += Time.deltaTime * _speed;
             }
 
             yield return null;
         }
-        _cyclePercentage = 0;
-        _eventManager.SelectEvent();
+
+        StopCoroutine(DayCycleController());
+        //_eventManager.SelectEvent();
     }
 
     public IEnumerator NightCycleController()
     {
+        cyclePercentage = 0;
         _currentCycle = NightCycleController();
-        while (_cyclePercentage < _cycleLength/2)
+        while (cyclePercentage < _cycleLength/2)
         {
             if (!_isPaused)
             {
-                _light.transform.eulerAngles = Vector3.Lerp(_nightCycleStartPos, _nightCycleEndPos, _cyclePercentage / (_cycleLength / 2));
+                _light.transform.eulerAngles = Vector3.Lerp(_nightCycleStartPos, _nightCycleEndPos, cyclePercentage / (_cycleLength / 2));
 
-                _cyclePercentage += Time.deltaTime * _speed;
+                cyclePercentage += Time.deltaTime * _speed;
             }
 
             yield return null;
         }
-        _cyclePercentage = 0;
-        _eventManager.SelectEvent();
+        //_eventManager.SelectEvent();
+        StopCoroutine(NightCycleController());
     }
 
     /// <summary>
