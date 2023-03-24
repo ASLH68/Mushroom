@@ -55,7 +55,7 @@ public class DialogueUIController : MonoBehaviour
 
     private void Start()
     {
-        _canTalk = true;
+        _canTalk = false;
         foreach(GameObject obj in _buttonChoiceObjs)
         {
             _buttonChoices.Add(obj.GetComponent<Button>());
@@ -185,7 +185,7 @@ public class DialogueUIController : MonoBehaviour
             }
         }
         _npcNameText.text = NPCManager.main.CurrentNPC.NPCName;
-        ShowMoodBar();
+        //ShowMoodBar();
         ShowDialogueOptions();
         SetOptions();
     }

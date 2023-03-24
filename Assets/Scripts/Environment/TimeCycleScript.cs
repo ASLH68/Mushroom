@@ -62,7 +62,7 @@ public class TimeCycleScript : MonoBehaviour
             {
                 _light.transform.eulerAngles = Vector3.Lerp(_dayCycleStartPos, _dayCycleEndPos, _cyclePercentage / (_cycleLength / 2));
 
-                _cyclePercentage += Time.deltaTime * _speed;
+                _cyclePercentage += Time.deltaTime;
             }
 
             yield return null;

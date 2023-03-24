@@ -892,7 +892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &356818154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1148,25 +1148,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Welcome to Mushroom, a narrative prototype build around emotional manipulation.
-    Deciding what to say to the characters are you ultimately determines the course
-    of the story and the fate of everyone, including yourself.
+    Deciding what to say to the characters and interacting with the environment 
+    ultimately determines the course of the story and the fate of everyone involved.
 
 
-    Esc - Close
-    game
+    Esc
+    - Exit Game
 
-    E - Interact with an NPC
+    E - Interact
 
-    WASD - Movement
+    WASD - Move
 
-    Shift - Sprint
+    Shift (Hold) - Sprint
 
     Space
     - Jump
 
-    Mouse - Look around
+    Mouse - Look Around
 
-    Left Mouse Button - Select dialogue option'
+    Left Mouse Button - Select'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
