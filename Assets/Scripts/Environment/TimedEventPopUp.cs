@@ -28,15 +28,15 @@ public class TimedEventPopUp : MonoBehaviour
     bool _openingScene = true;
 
     // Event Text
-    int _eveningOrder;
+    /*int _eveningOrder;
     [SerializeField] private List<string> eveningEventTitle = new List<string>();
     [SerializeField] private List<string> eveningEventDescription = new List<string>();
     /*string[] _eveningEvents = new string[]
-    { "You light the campfire for the first time." };*/ 
+    { "You light the campfire for the first time." };
 
     int _morningSelection;
     [SerializeField] private List<string> morningEventTitle = new List<string>();
-    [SerializeField] private List<string> morningEventDescription = new List<string>();
+    [SerializeField] private List<string> morningEventDescription = new List<string>();*/
     //string[] _morningEvents = new string[] { };
 
     /// <summary>
@@ -103,6 +103,7 @@ public class TimedEventPopUp : MonoBehaviour
         // Disable Cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //_timeCycle.cyclePercentage = _timeCycle.CycleLength / 2;
 
         // Starts next part of Day/Night cycle
         if (_wasDay)

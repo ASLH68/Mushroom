@@ -133,7 +133,7 @@ public class EventManager : MonoBehaviour
         }
         else
         {
-            /*// Adds events to pool of potential events if their conditions are
+            // Adds events to pool of potential events if their conditions are
             // met
             if (_harry.MoodVal >= 75 && !_event1.HasPlayed)
             {
@@ -150,7 +150,7 @@ public class EventManager : MonoBehaviour
             if (_fiona.MoodVal <= 25 && !_event4.HasPlayed)
             {
                 eventPool.Add(_event4);
-            }*/
+            }
 
             // Chooses between potential events, or triggers a default event
             // if there are none
@@ -234,6 +234,7 @@ public class EventManager : MonoBehaviour
         }
         _popUpText.text = i.DisplayText;
         _popUpObject.ActivatePopUp();
+
     }
 
 }
