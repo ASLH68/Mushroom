@@ -94,6 +94,7 @@ public class NPCClass : MonoBehaviour
     {
         if(other.tag.Equals("Player"))
         {
+            DialogueUIController.main.SetCanTalk(true);
             DialogueUIController.main.ShowInteractKey();
             DialogueUIController.main.SetCanTalk(true);
             NPCManager.main.SetCurrentNPC(this.gameObject.GetComponent<NPCClass>());
@@ -106,7 +107,6 @@ public class NPCClass : MonoBehaviour
         {
             DialogueUIController.main.SetCanTalk(false);
             DialogueUIController.main.HideInteractKey();
-            //DialogueUIController.main.SetCanTalk(false);
         }
     }
 
