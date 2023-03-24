@@ -33,7 +33,6 @@ public class TimeCycleScript : MonoBehaviour
     [SerializeField] EventManager _eventManager;
 
     private float _cyclePercentage;
-    private IEnumerator _currentCycle;
 
     private void Awake()
     {
@@ -55,7 +54,6 @@ public class TimeCycleScript : MonoBehaviour
 
     public IEnumerator DayCycleController()
     {
-        _currentCycle = DayCycleController();
         while (_cyclePercentage < _cycleLength/2)
         {
             if (!_isPaused)
@@ -73,7 +71,6 @@ public class TimeCycleScript : MonoBehaviour
 
     public IEnumerator NightCycleController()
     {
-        _currentCycle = NightCycleController();
         while (_cyclePercentage < _cycleLength/2)
         {
             if (!_isPaused)

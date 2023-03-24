@@ -19,7 +19,7 @@ public class TimedEventPopUp : MonoBehaviour
     public TextMeshProUGUI /*_text*/titleText;
     // Time Management
     [SerializeField] TimeCycleScript _timeCycle;
-    bool _wasDay = true;
+    bool _wasDay = false;
     public bool WasDay { get => _wasDay; set => _wasDay = value; }
     // Pop up objects
     [SerializeField] GameObject _popUpBG;
@@ -105,24 +105,16 @@ public class TimedEventPopUp : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         // Starts next part of Day/Night cycle
-        if (_wasDay && !_openingScene)
+        if (_wasDay)
         {
-            _timeCycle.StartCoroutine("NightCycleController");
+            StartCoroutine(TimeCycleScript.main.NightCycleController());
         }
         else
         {
-            _timeCycle.StartCoroutine("DayCycleController");
+            StartCoroutine(TimeCycleScript.main.DayCycleController());
         }
 
         _wasDay = !_wasDay;
-
-        // For opening scene, starts correct day cycle
-        if (_openingScene)
-        {
-            _wasDay = true;
-            _timeCycle.StartCoroutine("DayCycleController");
-            _openingScene = false;
-        }
 
         // Hide Pop Up
         _popUpBG.SetActive(false);
