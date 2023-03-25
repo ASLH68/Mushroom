@@ -1761,7 +1761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5db97b44fa494a45b26d1cbbca1190c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isLeaveButton: 1
+  _isLeaveButton: 0
 --- !u!1001 &105982109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10861,6 +10861,7 @@ GameObject:
   - component: {fileID: 701773892}
   - component: {fileID: 701773891}
   - component: {fileID: 701773895}
+  - component: {fileID: 701773896}
   m_Layer: 5
   m_Name: Dialoge Canvas
   m_TagString: Untagged
@@ -10927,7 +10928,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &701773894
 RectTransform:
@@ -10977,6 +10978,18 @@ MonoBehaviour:
   - {fileID: 1097919601}
   - {fileID: 1795275332}
   _nextButton: {fileID: 1073940092}
+--- !u!225 &701773896
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701773890}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &706257713
 GameObject:
   m_ObjectHideFlags: 0
@@ -35038,6 +35051,11 @@ PrefabInstance:
       propertyPath: _nameText
       value: 
       objectReference: {fileID: 475876207}
+    - target: {fileID: 3149332162850731288, guid: 40d658d63db415e45ab0e7f37011a4ee,
+        type: 3}
+      propertyPath: _canPickUp
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3149332162850731288, guid: 40d658d63db415e45ab0e7f37011a4ee,
         type: 3}
       propertyPath: _takeButton
