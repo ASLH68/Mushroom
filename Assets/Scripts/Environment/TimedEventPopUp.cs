@@ -25,7 +25,7 @@ public class TimedEventPopUp : MonoBehaviour
     [SerializeField] GameObject _popUpBG;
     [SerializeField] GameObject _popUpButton;
     // Misc
-    bool _openingScene = true;
+    //bool _openingScene = true;
 
     // Event Text
     /*int _eveningOrder;
@@ -108,7 +108,7 @@ public class TimedEventPopUp : MonoBehaviour
         // Starts next part of Day/Night cycle
         if (_wasDay)
         {
-            StartCoroutine(TimeCycleScript.main.NightCycleController());
+            StartCoroutine(_timeCycle.NightCycleController());
         }
         else
         {

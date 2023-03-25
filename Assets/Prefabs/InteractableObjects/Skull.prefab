@@ -113,6 +113,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactableType: 7
   _destroyOnPickUp: 1
+  _interactableName: 
+  _interactableDesc: 
+  _canPickUp: 0
+  _leaveButton: {fileID: 0}
+  _takeButton: {fileID: 0}
+  _descriptionUI: {fileID: 0}
+  _choiceButtons: {fileID: 0}
+  _nameText: {fileID: 0}
+  _descText: {fileID: 0}
 --- !u!135 &2577736707352372059
 SphereCollider:
   m_ObjectHideFlags: 0

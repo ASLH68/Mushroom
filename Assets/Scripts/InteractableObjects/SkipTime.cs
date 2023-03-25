@@ -17,6 +17,7 @@ public class SkipTime : MonoBehaviour
     [SerializeField] GameObject _player;
     [SerializeField] GameObject _buttonIcon;
     Vector3 _playerPos;
+    Vector3 _lastPos;
     //public bool useable = false;
 
     // Start is called before the first frame update
@@ -36,11 +37,21 @@ public class SkipTime : MonoBehaviour
         // Prompts Player
         if (GetComponent<CapsuleCollider>().bounds.Contains(_playerPos))
         {
+            // Activates Pop Up
             if (Input.GetKeyDown(KeyCode.R))
             {
                 _em.SelectEvent();
+                _buttonIcon.SetActive(false);
+            }
+
+            // Restores button after activating
+            if (_lastPos != _playerPos)
+            {
+                _buttonIcon.SetActive(true);
             }
         }
+
+        _lastPos = _playerPos;
     }
 
     /// <summary>

@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -19,11 +20,25 @@ public class InteractableObject : MonoBehaviour
 
     private bool _isInteractable = false;   // If the player is currently able to interact with the object
     [SerializeField] private bool _destroyOnPickUp;
+    public bool DestroyOnPickUp { get => _destroyOnPickUp; }
+
+    // Added by Peter
+    [SerializeField] string _interactableName;
+    [SerializeField] string _interactableDesc;
+    [SerializeField] bool _canPickUp = false;
+    [SerializeField] AssignButtonToObject _leaveButton;
+    [SerializeField] AssignButtonToObject _takeButton;
+
+    // GameObjects
+    [SerializeField] GameObject _descriptionUI;
+    [SerializeField] GameObject _choiceButtons;
+    [SerializeField] TextMeshProUGUI _nameText;
+    [SerializeField] TextMeshProUGUI _descText;
 
     private void OnTriggerEnter(Collider other)
     {
         // Enables interactivity if it has not been interacted with yet
-        if(!_hasBeenInteracted)
+        if (!_hasBeenInteracted)
         {
             _isInteractable = true;
         }
@@ -47,15 +62,70 @@ public class InteractableObject : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _isInteractable && !_hasBeenInteracted)
         {
             // Disables interactability and sets the hasbeeninteracted with bool
-            _hasBeenInteracted = true;
+            /*_hasBeenInteracted = true;
             _isInteractable = false;
+            DialogueUIController.main.HideInteractKey(); */
+            ActivateUI();
             DialogueUIController.main.HideInteractKey();
-            
-            if(_destroyOnPickUp)
-            {
-                InteractablesManager.main.ObjectInteraction = false;
-                gameObject.SetActive(false);
-            }
-        }           
+            _leaveButton.AssignObject(gameObject);
+            _takeButton.AssignObject(gameObject);
+        }
+    }
+
+    /// <summary>
+    /// Activates UI and presents description
+    /// </summary>
+    void ActivateUI()
+    {
+        //Activates Text and UI
+        _nameText.text = _interactableName;
+        _descText.text = _interactableDesc;
+        _descriptionUI.SetActive(true);
+        _choiceButtons.SetActive(true);
+
+        // Enable Cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    /// <summary>
+    /// Handles what happens when player chooses to take or leave the item
+    /// </summary>
+   public void DisableUI()
+    {
+        // Deactivates UI
+        _descriptionUI.SetActive(false);
+        _choiceButtons.SetActive(false);
+
+        // Disable Cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        // Removes objects
+        if (_destroyOnPickUp && _canPickUp)
+        {
+            DestroyInteractable();
+        }
+        else
+        {
+            DialogueUIController.main.ShowInteractKey();
+        }
+    }
+
+    /// <summary>
+    /// Removes item from world
+    /// </summary>
+    void DestroyInteractable()
+    {
+        InteractablesManager.main.ObjectInteraction = false;
+        gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Enables pick up when button is pressed
+    /// </summary>
+    public void EnablePickUp()
+    {
+        _canPickUp = true;
     }
 }
