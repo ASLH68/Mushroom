@@ -23,7 +23,7 @@ public class NPCDialogue
     public enum Emotion
     {
         HAPPY,
-        NEURTRAL,
+        NEUTRAL,
         SAD
     }
 
