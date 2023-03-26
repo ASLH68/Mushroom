@@ -3139,6 +3139,11 @@ PrefabInstance:
       objectReference: {fileID: 475876207}
     - target: {fileID: 2577736707352372056, guid: f7191d074095c96408996dc37e68322d,
         type: 3}
+      propertyPath: _canPickUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577736707352372056, guid: f7191d074095c96408996dc37e68322d,
+        type: 3}
       propertyPath: _takeButton
       value: 
       objectReference: {fileID: 98767433}
@@ -3157,6 +3162,16 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 2577736707352372056, guid: f7191d074095c96408996dc37e68322d,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: "A skull that\u2019s been picked clean and is mostly intact."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577736707352372056, guid: f7191d074095c96408996dc37e68322d,
+        type: 3}
+      propertyPath: _interactableName
+      value: Skull
+      objectReference: {fileID: 0}
     - target: {fileID: 2577736707352372058, guid: f7191d074095c96408996dc37e68322d,
         type: 3}
       propertyPath: m_Name
@@ -8338,6 +8353,11 @@ PrefabInstance:
       objectReference: {fileID: 475876207}
     - target: {fileID: 1650971632030136622, guid: c7c4381525d061247a85fb63525e4ecb,
         type: 3}
+      propertyPath: _canPickUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650971632030136622, guid: c7c4381525d061247a85fb63525e4ecb,
+        type: 3}
       propertyPath: _takeButton
       value: 
       objectReference: {fileID: 98767433}
@@ -8356,6 +8376,16 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 1650971632030136622, guid: c7c4381525d061247a85fb63525e4ecb,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: "A simple metal ring engraved with the word \u201CHOPE\u201D."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650971632030136622, guid: c7c4381525d061247a85fb63525e4ecb,
+        type: 3}
+      propertyPath: _interactableName
+      value: Fiona's ring
+      objectReference: {fileID: 0}
     - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
         type: 3}
       propertyPath: m_RootOrder
@@ -34780,6 +34810,11 @@ PrefabInstance:
       objectReference: {fileID: 475876207}
     - target: {fileID: 2691019821978246793, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
         type: 3}
+      propertyPath: _canPickUp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691019821978246793, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
+        type: 3}
       propertyPath: _takeButton
       value: 
       objectReference: {fileID: 98767433}
@@ -34798,6 +34833,17 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 2691019821978246793, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: A coral colored metal water bottle, with a sticker representing a cross
+        country team.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691019821978246793, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
+        type: 3}
+      propertyPath: _interactableName
+      value: Water Bottle
+      objectReference: {fileID: 0}
     - target: {fileID: 2691019821978246795, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
         type: 3}
       propertyPath: m_Name
@@ -34959,6 +35005,11 @@ PrefabInstance:
       objectReference: {fileID: 475876207}
     - target: {fileID: 3193760396486440950, guid: f77bde456c507a749bed607fa95558ef,
         type: 3}
+      propertyPath: _canPickUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193760396486440950, guid: f77bde456c507a749bed607fa95558ef,
+        type: 3}
       propertyPath: _takeButton
       value: 
       objectReference: {fileID: 98767433}
@@ -34977,6 +35028,16 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 3193760396486440950, guid: f77bde456c507a749bed607fa95558ef,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: Sharp enough to cut through what it needs to.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3193760396486440950, guid: f77bde456c507a749bed607fa95558ef,
+        type: 3}
+      propertyPath: _interactableName
+      value: Axe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f77bde456c507a749bed607fa95558ef, type: 3}
 --- !u!1001 &992749604569311313
@@ -35076,6 +35137,16 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 3149332162850731288, guid: 40d658d63db415e45ab0e7f37011a4ee,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: A small stack of science and history textbooks.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3149332162850731288, guid: 40d658d63db415e45ab0e7f37011a4ee,
+        type: 3}
+      propertyPath: _interactableName
+      value: Books
+      objectReference: {fileID: 0}
     - target: {fileID: 3149332162850731290, guid: 40d658d63db415e45ab0e7f37011a4ee,
         type: 3}
       propertyPath: m_Name
@@ -35200,6 +35271,17 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 3936099808289436831, guid: d032c84a7993c374587090466c23f27e,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: A somewhat battered flashlight, its button presses easily from how much
+        it has been used.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936099808289436831, guid: d032c84a7993c374587090466c23f27e,
+        type: 3}
+      propertyPath: _interactableName
+      value: Flashlight
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d032c84a7993c374587090466c23f27e, type: 3}
 --- !u!4 &2770373939632744614 stripped
@@ -35339,6 +35421,11 @@ PrefabInstance:
       objectReference: {fileID: 475876207}
     - target: {fileID: 801113499441938066, guid: 9199b0eb961e1274e8853de688ca14b8,
         type: 3}
+      propertyPath: _canPickUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 801113499441938066, guid: 9199b0eb961e1274e8853de688ca14b8,
+        type: 3}
       propertyPath: _takeButton
       value: 
       objectReference: {fileID: 98767433}
@@ -35357,6 +35444,16 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 801113499441938066, guid: 9199b0eb961e1274e8853de688ca14b8,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: A red with white spots capped mushroom.
+      objectReference: {fileID: 0}
+    - target: {fileID: 801113499441938066, guid: 9199b0eb961e1274e8853de688ca14b8,
+        type: 3}
+      propertyPath: _interactableName
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9199b0eb961e1274e8853de688ca14b8, type: 3}
 --- !u!1001 &3457020841727693241
@@ -35582,6 +35679,11 @@ PrefabInstance:
       objectReference: {fileID: 475876207}
     - target: {fileID: 7529178781869670395, guid: 4e942dc9a87129c46acfddfc48f77a2e,
         type: 3}
+      propertyPath: _canPickUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529178781869670395, guid: 4e942dc9a87129c46acfddfc48f77a2e,
+        type: 3}
       propertyPath: _takeButton
       value: 
       objectReference: {fileID: 98767433}
@@ -35600,6 +35702,16 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 7529178781869670395, guid: 4e942dc9a87129c46acfddfc48f77a2e,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: A pair of AA batteries.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529178781869670395, guid: 4e942dc9a87129c46acfddfc48f77a2e,
+        type: 3}
+      propertyPath: _interactableName
+      value: Batteries
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e942dc9a87129c46acfddfc48f77a2e, type: 3}
 --- !u!1001 &8273146135499038174
@@ -35621,6 +35733,11 @@ PrefabInstance:
       objectReference: {fileID: 475876207}
     - target: {fileID: 6098514876995659976, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
         type: 3}
+      propertyPath: _canPickUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098514876995659976, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
+        type: 3}
       propertyPath: _takeButton
       value: 
       objectReference: {fileID: 98767433}
@@ -35639,6 +35756,17 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 6098514876995659976, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: "A comic about Plastic Man, it\u2019s in a slip cover so the comic isn\u2019t
+        damaged."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098514876995659976, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
+        type: 3}
+      propertyPath: _interactableName
+      value: Comic
+      objectReference: {fileID: 0}
     - target: {fileID: 6098514876995659978, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
         type: 3}
       propertyPath: m_Name
@@ -35803,6 +35931,16 @@ PrefabInstance:
       propertyPath: _descriptionUI
       value: 
       objectReference: {fileID: 250818366}
+    - target: {fileID: 5774447014347916988, guid: 50b227a65f38aa94a99378e50ad5c4ce,
+        type: 3}
+      propertyPath: _interactableDesc
+      value: "The tape inside has \u201CHappy Birthday\u201D written on it with sharpie."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5774447014347916988, guid: 50b227a65f38aa94a99378e50ad5c4ce,
+        type: 3}
+      propertyPath: _interactableName
+      value: Jukebox
+      objectReference: {fileID: 0}
     - target: {fileID: 5774447014347916990, guid: 50b227a65f38aa94a99378e50ad5c4ce,
         type: 3}
       propertyPath: m_Name
