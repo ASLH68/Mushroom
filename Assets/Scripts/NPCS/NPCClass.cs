@@ -31,12 +31,12 @@ public class NPCClass : MonoBehaviour
     private enum Emotion
     {
         HAPPY,
-        NEURTRAL,
+        NEUTRAL,
         SAD
     }
 
     // NPC's current emotion
-    private Emotion _emotion = Emotion.NEURTRAL;
+    private Emotion _emotion = Emotion.NEUTRAL;
     public string CurrentEmotion => _emotion.ToString();
 
     // current emotion is controlled by the _moodVal
@@ -121,7 +121,7 @@ public class NPCClass : MonoBehaviour
         }
         else if (_moodVal > _sadThreshhold)
         {
-            _emotion = Emotion.NEURTRAL;
+            _emotion = Emotion.NEUTRAL;
         }
         else
         {
