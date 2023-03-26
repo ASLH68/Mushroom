@@ -60,7 +60,10 @@ public class SkipTime : MonoBehaviour
     /// <param name="other">object this collides with</param>
     private void OnTriggerEnter(Collider other)
     {
-        _buttonIcon.SetActive(true);
+        if (other.tag.Equals("Player"))
+        {
+            _buttonIcon.SetActive(true);
+        }
     }
 
     /// <summary>
@@ -69,7 +72,10 @@ public class SkipTime : MonoBehaviour
     /// <param name="other"> object this collides witj=h</param>
     private void OnTriggerExit(Collider other)
     {
-        _buttonIcon.SetActive(false);
+        if (other.tag.Equals("Player"))
+        {
+            _buttonIcon.SetActive(false);
+        }
     }
 
 

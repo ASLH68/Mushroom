@@ -1157,12 +1157,15 @@ MonoBehaviour:
 
     E - Interact
 
+    R - Interact with the campfire (progresses
+    to next game phase)
+
     WASD - Move
 
     Shift (Hold) - Sprint
 
-    Space
-    - Jump
+    Space -
+    Jump
 
     Mouse - Look Around
 
@@ -1193,8 +1196,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.5
-  m_fontSizeBase: 59.5
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
