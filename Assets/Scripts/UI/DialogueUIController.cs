@@ -64,8 +64,10 @@ public class DialogueUIController : MonoBehaviour
 
     private void Update()
     {
+        //Stuff that happens when you talk to an NPC
         if(Input.GetKeyDown(KeyCode.E) && _canTalk && !InteractablesManager.main.ObjectInteraction)
         {
+            EmotionDisplay.main.SetEmotionImage(NPCManager.main.CurrentNPC.CurrentEmotion);
             TimeCycleScript.main.PauseCycle();
             _canTalk = false;
             UnlockCursor();
@@ -190,28 +192,41 @@ public class DialogueUIController : MonoBehaviour
         SetOptions();
     }
 
+    /// <summary>
+    /// Attached to the option buttons. Sets the choice of the decision and
+    /// modifies the NPC mood accordingly
+    /// </summary>
+    /// <param name="optionNum"> option num selected </param>
     public void OptionSelected(int optionNum)
     {
-        if(optionNum != 0)
+        _nextButton.SetActive(false);
+        if (optionNum != 0)
         {
             DisableChoiceButtons();
             _currentDecision.SetChoice(optionNum);
 
             int relativeWeight = _currentDecision.Weight;
 
+            // Case 1 is happy, 2 is neutral, 3 is sad
             switch (optionNum)
             {
+                case 1:
+                    NPCManager.main.CurrentNPC.SetMood(relativeWeight);
+                    StartCoroutine(EmotionDisplay.main.ShowTemporaryEmotion("HAPPY"));
+                    break;
                 case 2:
                     relativeWeight = 0;
+                    StartCoroutine(EmotionDisplay.main.ShowTemporaryEmotion("NEUTRAL"));
                     break;
                 case 3:
                     relativeWeight = -relativeWeight;
+                    StartCoroutine(EmotionDisplay.main.ShowTemporaryEmotion("SAD"));
+                    NPCManager.main.CurrentNPC.SetMood(relativeWeight);
                     break;
-            }
-
-            NPCManager.main.CurrentNPC.SetMood(relativeWeight);
+            }        
         }
         
+        // If the NPC is going to continue talking...
         if (NPCManager.main.CurrentNPC.CurrentConversation.ContinueConversation)
         {
             NPCManager.main.CurrentNPC.ChangeConversation();
@@ -280,6 +295,7 @@ public class DialogueUIController : MonoBehaviour
         bool hasDecision = false;
         foreach(DecisionClass dec in DecisionManager.main.DecisionList)
         {
+            //Checks for the NPC & conversation associated with the decision being made
             if(dec.AssociatedConversation == NPCManager.main.CurrentNPC.ConversationNum && 
                 NPCManager.main.CurrentNPC.Equals(dec.AssociatedNPC))
             {
@@ -294,7 +310,16 @@ public class DialogueUIController : MonoBehaviour
                 break;
             }
         }
-        _nextButton.SetActive(!hasDecision);
+
+        if(hasDecision == true || !NPCManager.main.CurrentNPC.CurrentConversation.ContinueConversation)
+        {
+            _nextButton.SetActive(false);
+        }
+        else
+        {
+            _nextButton.SetActive(true);
+        }
+        //_nextButton.SetActive(!hasDecision);
 
         if(!hasDecision)
         {

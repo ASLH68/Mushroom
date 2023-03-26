@@ -42,6 +42,6 @@ public class MoodBarUI : MonoBehaviour
     /// </summary>
     public void FillEmotionMeter()
     {
-        _emotionMeterIMG.fillAmount = (float)_npcReference.MoodVal/100;
+        //_emotionMeterIMG.fillAmount = (float)_npcReference.MoodVal/100;
     }
 }
