@@ -120,6 +120,8 @@ public class InteractableObject : MonoBehaviour
     /// </summary>
     void DestroyInteractable()
     {
+        _hasBeenInteracted = true;
+        _isInteractable = false;
         InteractablesManager.main.ObjectInteraction = false;
         gameObject.SetActive(false);
     }
