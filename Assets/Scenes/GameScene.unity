@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.004101143, g: 0.003698667, b: 0.0018515392, a: 1}
+  m_IndirectSpecularColor: {r: 0.0040912395, g: 0.0036873834, b: 0.0018427754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3585,22 +3585,13 @@ MonoBehaviour:
     - Here's that nerd book you wanted
     _choiceMade: 0
   - _name: Cycle 1 - Night - Fiona - C0
-    _associatedConversation: 3
+    _associatedConversation: 0
     _associatedNPC: {fileID: 77098027}
     _weight: 30
     Choices:
-    - Happy Option
-    - Neutral Option
-    - Sad Option
-    _choiceMade: 0
-  - _name: Cycle 1 - Night - Fiona - C1
-    _associatedConversation: 1
-    _associatedNPC: {fileID: 77098027}
-    _weight: 30
-    Choices:
-    - Happy Option
-    - Neutral Option
-    - Sad Option
+    - No need to worry about the campfire, I've got it!
+    - I guess I can figure it out.
+    - You aren't getting help from me.
     _choiceMade: 0
   - _name: Cycle 2 - Day - Harry - C0
     _associatedConversation: 0
@@ -19312,7 +19303,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: Happy Dialogue
+      value: I can't wait for the campfire to be lit.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
