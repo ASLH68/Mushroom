@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using StarterAssets;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -84,6 +85,7 @@ public class InteractableObject : MonoBehaviour
         _choiceButtons.SetActive(true);
 
         // Enable Cursor
+        FirstPersonController.main.IsControllable = false;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -100,6 +102,7 @@ public class InteractableObject : MonoBehaviour
         // Disable Cursor
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        FirstPersonController.main.IsControllable = true;
 
         // Removes objects
         if (_destroyOnPickUp && _canPickUp)
