@@ -27,7 +27,7 @@ public class AssignButtonToObject : MonoBehaviour
 
     /// <summary>
     /// Disables UI and enbales object to be picked up if applicable
-    /// </summary>
+    /// <summary>
     public void RemoveUI()
     {
         if (!_isLeaveButton)
@@ -35,6 +35,5 @@ public class AssignButtonToObject : MonoBehaviour
             _targetObject.GetComponent<InteractableObject>().EnablePickUp();
         }
         _targetObject.GetComponent<InteractableObject>().DisableUI();
-        _skipTime.ShowButtonIcon();
     }
 }
