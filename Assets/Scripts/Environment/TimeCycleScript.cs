@@ -60,6 +60,11 @@ public class TimeCycleScript : MonoBehaviour
 
     public IEnumerator DayCycleController()
     {
+        // Resets position and sets color
+        cyclePercentage = 0;
+        _light.color = new Color(1, 0.9568627f, 0.8392157f);
+
+        // Moves light
         while (cyclePercentage < _cycleLength/2)
         {
             if (!_isPaused)
@@ -72,12 +77,18 @@ public class TimeCycleScript : MonoBehaviour
             yield return null;
         }
 
+        // ends function
         StopCoroutine(DayCycleController());
         //_eventManager.SelectEvent();
     }
 
     public IEnumerator NightCycleController()
     {
+        // Resets position and sets color
+        cyclePercentage = 0;
+        _light.color = new Color(0.2109375f, 0.2207031f, 0.25f);
+
+        // Moves light
         while (_cyclePercentage < _cycleLength/2)
         {
             if (!_isPaused)
@@ -89,6 +100,8 @@ public class TimeCycleScript : MonoBehaviour
 
             yield return null;
         }
+
+        // Ends Function
         //_eventManager.SelectEvent();
         StopCoroutine(NightCycleController());
     }

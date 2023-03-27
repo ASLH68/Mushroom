@@ -75,19 +75,6 @@ public class TimedEventPopUp : MonoBehaviour
         // Set up pop up
         _popUpBG.SetActive(true);
         _popUpButton.SetActive(true);
-
-        // Set display text
-        if (_wasDay)
-        {
-            // Evening events play in the order they are listed in the array
-            ///*_text*/titleText.text = /*_eveningEvents*/eveningEventTitle[_eveningOrder];
-            //_eveningOrder++;
-        }
-        else
-        {
-            /*titleText.text = morningEventDescription[_morningSelection];
-            _morningSelection++;*/
-        }
         _textObject.GetComponent<CanvasRenderer>().SetAlpha(100);
 
         // Enable Cursor
@@ -112,7 +99,7 @@ public class TimedEventPopUp : MonoBehaviour
         }
         else
         {
-            StartCoroutine(TimeCycleScript.main.DayCycleController());
+            StartCoroutine(_timeCycle.DayCycleController());
         }
 
         _wasDay = !_wasDay;
