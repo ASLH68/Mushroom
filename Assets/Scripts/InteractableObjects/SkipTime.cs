@@ -44,11 +44,11 @@ public class SkipTime : MonoBehaviour
                 _buttonIcon.SetActive(false);
             }
 
-            // Restores button after activating
+/*            // Restores button after activating
             if (_lastPos != _playerPos)
             {
                 _buttonIcon.SetActive(true);
-            }
+            }*/
         }
 
         _lastPos = _playerPos;
@@ -78,5 +78,13 @@ public class SkipTime : MonoBehaviour
         }
     }
 
+    public void HideButtonIcon()
+    {
+        _buttonIcon.SetActive(false);
+    }
 
+    public void ShowButtonIcon()
+    {
+        _buttonIcon.SetActive(true);
+    }
 }

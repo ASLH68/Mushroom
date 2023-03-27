@@ -14,6 +14,7 @@ public class AssignButtonToObject : MonoBehaviour
     // Vars
     GameObject _targetObject;
     [SerializeField] bool _isLeaveButton;
+    [SerializeField] private SkipTime _skipTime;
 
     /// <summary>
     /// Enables assigned object to be picked up.
@@ -34,5 +35,6 @@ public class AssignButtonToObject : MonoBehaviour
             _targetObject.GetComponent<InteractableObject>().EnablePickUp();
         }
         _targetObject.GetComponent<InteractableObject>().DisableUI();
+        _skipTime.ShowButtonIcon();
     }
 }

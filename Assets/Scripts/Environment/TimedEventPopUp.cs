@@ -24,6 +24,8 @@ public class TimedEventPopUp : MonoBehaviour
     // Pop up objects
     [SerializeField] GameObject _popUpBG;
     [SerializeField] GameObject _popUpButton;
+    [SerializeField] SkipTime _skipTime;
+    private int _popUpNum = 1;
     // Misc
     //bool _openingScene = true;
 
@@ -100,6 +102,15 @@ public class TimedEventPopUp : MonoBehaviour
         else
         {
             StartCoroutine(_timeCycle.DayCycleController());
+        }
+
+        if(_popUpNum == 1)
+        {
+            _popUpNum++;
+        }
+        else 
+        {
+            _skipTime.ShowButtonIcon();
         }
 
         _wasDay = !_wasDay;
