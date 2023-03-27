@@ -4628,6 +4628,24 @@ MonoBehaviour:
     - Life really isn't fair.
     - She should stop camping.
     _choiceMade: 0
+  - _name: Cycle 4 - Day - Fiona - C0
+    _associatedConversation: 0
+    _associatedNPC: {fileID: 774214305}
+    _weight: 30
+    Choices:
+    - I can help you find it.
+    - I have some missing as well
+    - It was Harry.
+    _choiceMade: 0
+  - _name: Cycle 4 - Day - Fiona - C2
+    _associatedConversation: 2
+    _associatedNPC: {fileID: 774214305}
+    _weight: 30
+    Choices:
+    - Don't worry about it, I've got it.
+    - It'll work itself out.
+    - I need a snack break before I help.
+    _choiceMade: 0
 --- !u!4 &242865578
 Transform:
   m_ObjectHideFlags: 0
@@ -15073,6 +15091,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[2]._continueConversation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[3]._continueConversation
       value: 0
       objectReference: {fileID: 0}
@@ -15234,7 +15257,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
-      value: Can you look aorund, I have to think for a minute.
+      value: Can you look around, I have to think for a minute.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -15255,7 +15278,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[2].Dialogue
-      value: 
+      value: Now I'll have to scavange.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -15465,6 +15488,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 774214303}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &774214305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 774214303}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf1d3a31debd6a54c90a2e19dd170091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &776225318
 PrefabInstance:
   m_ObjectHideFlags: 0
