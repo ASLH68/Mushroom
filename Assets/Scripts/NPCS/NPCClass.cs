@@ -21,6 +21,8 @@ public class NPCClass : MonoBehaviour
     private bool _isInteractable;
     public bool IsInteractable => _isInteractable;
 
+    [HideInInspector]public bool completedInteraction;    // Whether the player has finished talking to the NPC
+
     // NPCManager var
     private NPCManager _npcManager;
 
@@ -80,6 +82,7 @@ public class NPCClass : MonoBehaviour
 
     private void Start()
     {
+        completedInteraction = false;
         _isInteractable = true;
         _conversationNum = 0;
 

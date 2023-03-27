@@ -14,8 +14,9 @@ public class NPCManager : MonoBehaviour
 {
     public static NPCManager main;
 
-/*    private GameObject[] NPCObjects;
-    private Dictionary<string, NPCDialogue> NPC1Dictionary;*/
+    private GameObject[] NPCObjects;
+    private GameObject[] NPCObjects2;
+    /*private Dictionary<string, NPCDialogue> NPC1Dictionary;*/
 
     private NPCClass _currentNPC;   // NPC currently being interacted with
     public NPCClass CurrentNPC => _currentNPC;
@@ -40,7 +41,8 @@ public class NPCManager : MonoBehaviour
 
     private void Start()
     {
-        //NPCObjects = GameObject.FindGameObjectsWithTag("Character");
+        NPCObjects = GameObject.FindGameObjectsWithTag("npc1");
+        NPCObjects2 = GameObject.FindGameObjectsWithTag("npc2");
 
        /* foreach(GameObject obj in NPCObjects)
         {
@@ -56,5 +58,23 @@ public class NPCManager : MonoBehaviour
     public void SetCurrentNPC(NPCClass npcClass)
     {
         _currentNPC = npcClass;
+    }
+
+    /// <summary>
+    /// Checks if both NPC have been fully talked to by the player
+    /// </summary>
+    /// <returns></returns>
+    public bool CheckNPCInteractions()
+    {
+        bool bothInteracted = false;
+        foreach (GameObject obj in NPCObjects)
+        {
+            if(!obj.GetComponent<NPCClass>().completedInteraction)
+            {
+                bothInteracted = false;
+            }
+        }
+
+        return bothInteracted;
     }
 }

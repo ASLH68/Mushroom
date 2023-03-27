@@ -42,6 +42,10 @@ public class SkipTime : MonoBehaviour
             {
                 _em.SelectEvent();
                 _buttonIcon.SetActive(false);
+                if(NPCManager.main.CheckNPCInteractions())
+                {
+                    /* do the things*/
+                }
             }
 
 /*            // Restores button after activating
