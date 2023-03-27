@@ -35,7 +35,7 @@ public class SkipTime : MonoBehaviour
         _playerPos = _player.transform.position;
 
         // Prompts Player
-        if (GetComponent<CapsuleCollider>().bounds.Contains(_playerPos))
+        if (GetComponent<SphereCollider>().bounds.Contains(_playerPos))
         {
             // Activates Pop Up
             if (Input.GetKeyDown(KeyCode.R))

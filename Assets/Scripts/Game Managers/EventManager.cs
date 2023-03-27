@@ -73,11 +73,11 @@ public class EventManager : MonoBehaviour
                             "Nothing of note happened");
         // Emotions
         _event1 = new Event(1, "harryHappy", _defaultObj,
-                            "Harry is happy today");
+                            "A turtle showed up at camp");
         _event2 = new Event(2, "harrySad", _defaultObj, "Harry is sad today");
         _event3 = new Event(3, "fionaHappy", _defaultObj,
-                            "Fiona is happy today");
-        _event4 = new Event(4, "fionaSad", _defaultObj, "Fiona is sad today");
+                            "You hear bird songs");
+        _event4 = new Event(4, "fionaSad", _defaultObj, "Fiona got injured");
         // Nightlies
         _event5 = new Event(5, "unlitFire", _objs5,
             "The fire needs to be lit");
