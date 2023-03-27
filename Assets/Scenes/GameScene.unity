@@ -26704,6 +26704,7 @@ MonoBehaviour:
   _timeCycle: {fileID: 871806828}
   _popUpBG: {fileID: 1395523076}
   _popUpButton: {fileID: 449703236}
+  _skipTime: {fileID: 679351054}
 --- !u!4 &1410183672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
