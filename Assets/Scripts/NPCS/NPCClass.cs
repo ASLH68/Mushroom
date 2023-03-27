@@ -78,6 +78,8 @@ public class NPCClass : MonoBehaviour
 
     private int _conversationNum;
     public int ConversationNum => _conversationNum;
+
+    public int NumConversations => _conversations.Count;
     #endregion
 
     private void Start()
@@ -153,15 +155,21 @@ public class NPCClass : MonoBehaviour
         }
         else 
         {
+            // Sets conversation to the one specified in editor
             DialogueUIController.main.HideChoiceButtons();
             CurrentConvoDialogue = CurrentConversation._conversationDialogues;
+        }
+
+        if (ConversationNum == NumConversations-1)
+        {
+            completedInteraction = true;
         }
     }
 
     /// <summary>
-    /// 
+    /// Sets the next conversationNum to num & hides the choice buttons
     /// </summary>
-    /// <param name="num"></param>
+    /// <param name="num">num specified in the editor as the follow up convo </param>
     public void SetNextConvoNum(int num)
     {
         DialogueUIController.main.HideChoiceButtons();
