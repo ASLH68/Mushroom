@@ -37,6 +37,10 @@ public class EventManager : MonoBehaviour
     Event _event2;
     Event _event3;
     Event _event4;
+    Event _event14;
+    Event _event15;
+    Event _event16;
+    Event _event17;
     // Nightly events
     Event _event5;
     Event _event6;
@@ -74,10 +78,16 @@ public class EventManager : MonoBehaviour
         // Emotions
         _event1 = new Event(1, "harryHappy", _defaultObj,
                             "A turtle showed up at camp");
+        _event14 = new Event(14, "harryHappy2", _defaultObj,
+                            "NICK PUT TEXT HERE");
         _event2 = new Event(2, "harrySad", _defaultObj, "Harry is sad today");
+        _event15 = new Event(15, "harrySad2", _defaultObj, "NICK PUT TEXT HERE");
         _event3 = new Event(3, "fionaHappy", _defaultObj,
                             "You hear bird songs");
+        _event16 = new Event(16, "fionaHappy2", _defaultObj,
+                    "NICK PUT TEXT HERE");
         _event4 = new Event(4, "fionaSad", _defaultObj, "Fiona got injured");
+        _event17 = new Event(17, "fionaSad2", _defaultObj, "NICK PUT TEXT HERE");
         // Nightlies
         _event5 = new Event(5, "unlitFire", _objs5,
             "The fire needs to be lit");
@@ -139,17 +149,37 @@ public class EventManager : MonoBehaviour
             {
                 eventPool.Add(_event1);
             }
+            if (_harry.MoodVal >= 75 && _event1.HasPlayed 
+                && !_event14.HasPlayed)
+            {
+                eventPool.Add(_event14);
+            }
             if (_harry.MoodVal <= 25 && !_event2.HasPlayed)
             {
                 eventPool.Add(_event2);
+            }
+            if (_harry.MoodVal <= 25 && _event2.HasPlayed
+                && !_event15.HasPlayed)
+            {
+                eventPool.Add(_event15);
             }
             if (_fiona.MoodVal >= 75 && !_event3.HasPlayed)
             {
                 eventPool.Add(_event3);
             }
+            if (_fiona.MoodVal >= 75 && _event3.HasPlayed
+                && !_event16.HasPlayed)
+            {
+                eventPool.Add(_event16);
+            }
             if (_fiona.MoodVal <= 25 && !_event4.HasPlayed)
             {
                 eventPool.Add(_event4);
+            }
+            if (_fiona.MoodVal <= 25 && _event4.HasPlayed
+                && !_event17.HasPlayed)
+            {
+                eventPool.Add(_event17);
             }
 
             // Chooses between potential events, or triggers a default event

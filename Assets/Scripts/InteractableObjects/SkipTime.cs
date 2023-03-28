@@ -45,20 +45,22 @@ public class SkipTime : MonoBehaviour
             {
                 
                 _buttonIcon.SetActive(false);
-                if(!NPCManager.main.CheckNPCInteractions())
+                /*if(!NPCManager.main.CheckNPCInteractions())
                 {
-                    /* do the things*/
-                    _warning.SetActive(true);
-                    _alertOptions.SetActive(true);
-                    FirstPersonController.main.IsControllable = false;
 
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
                 }
                 else
                 {
                     _em.SelectEvent();
-                }
+                }*/
+
+                /* do the things*/
+                _warning.SetActive(true);
+                _alertOptions.SetActive(true);
+                FirstPersonController.main.IsControllable = false;
+
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
 
 /*            // Restores button after activating
