@@ -319,7 +319,6 @@ public class DialogueUIController : MonoBehaviour
         {
             _nextButton.SetActive(true);
         }
-        //_nextButton.SetActive(!hasDecision);
 
         if(!hasDecision)
         {

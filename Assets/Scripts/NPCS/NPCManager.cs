@@ -66,10 +66,17 @@ public class NPCManager : MonoBehaviour
     /// <returns></returns>
     public bool CheckNPCInteractions()
     {
-        bool bothInteracted = false;
+        bool bothInteracted = true;
         foreach (GameObject obj in NPCObjects)
         {
-            if(!obj.GetComponent<NPCClass>().completedInteraction)
+            if(!obj.GetComponentInChildren<NPCClass>().completedInteraction)
+            {
+                bothInteracted = false;
+            }
+        }
+        foreach (GameObject obj in NPCObjects2)
+        {
+            if (!obj.GetComponentInChildren<NPCClass>().completedInteraction)
             {
                 bothInteracted = false;
             }
