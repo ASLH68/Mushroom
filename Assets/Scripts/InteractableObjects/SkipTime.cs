@@ -9,6 +9,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using StarterAssets;
 
 public class SkipTime : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class SkipTime : MonoBehaviour
     [SerializeField] EventManager _em;
     [SerializeField] GameObject _player;
     [SerializeField] GameObject _buttonIcon;
+    [SerializeField] GameObject _warning;
+    [SerializeField] GameObject _alertOptions;
     Vector3 _playerPos;
     Vector3 _lastPos;
     //public bool useable = false;
@@ -40,11 +43,21 @@ public class SkipTime : MonoBehaviour
             // Activates Pop Up
             if (Input.GetKeyDown(KeyCode.R))
             {
-                _em.SelectEvent();
+                
                 _buttonIcon.SetActive(false);
-                if(NPCManager.main.CheckNPCInteractions())
+                if(!NPCManager.main.CheckNPCInteractions())
                 {
                     /* do the things*/
+                    _warning.SetActive(true);
+                    _alertOptions.SetActive(true);
+                    FirstPersonController.main.IsControllable = false;
+
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                }
+                else
+                {
+                    _em.SelectEvent();
                 }
             }
 
@@ -90,5 +103,25 @@ public class SkipTime : MonoBehaviour
     public void ShowButtonIcon()
     {
         _buttonIcon.SetActive(true);
+    }
+
+    public void YesToAlert()
+    {
+        _em.SelectEvent();
+
+        _warning.SetActive(false);
+        _alertOptions.SetActive(false);
+        FirstPersonController.main.IsControllable = true;
+    }
+
+    public void NoToAlert()
+    {
+        _warning.SetActive(false);
+        _alertOptions.SetActive(false);
+        ShowButtonIcon();
+        FirstPersonController.main.IsControllable = true;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
