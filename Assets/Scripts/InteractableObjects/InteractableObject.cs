@@ -39,10 +39,10 @@ public class InteractableObject : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Enables interactivity if it has not been interacted with yet
-/*        if (!_hasBeenInteracted)
+        if (!_hasBeenInteracted)
         {
             _isInteractable = true;
-        }*/
+        }
         InteractablesManager.main.ObjectInteraction = true;
         if (other.tag.Equals("Player") && !_hasBeenInteracted)
         {
