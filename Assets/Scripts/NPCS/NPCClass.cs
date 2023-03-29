@@ -81,7 +81,7 @@ public class NPCClass : MonoBehaviour
     #endregion
 
     private void Start()
-    { 
+    {
         _isInteractable = true;
         _conversationNum = 0;
 
