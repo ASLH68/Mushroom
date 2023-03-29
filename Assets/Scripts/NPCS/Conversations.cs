@@ -43,14 +43,6 @@ public class Conversations
                             return true;
                         }
                     }
-                    //NPCManager.main.CurrentNPC.SetNextConvoNum(followUpConvo.NextConvoNum);
-                    return true;
-                }
-            }
-            foreach (FollowUpConvo followUpConvo in _followUpConvos)
-            {
-                if (followUpConvo.DecisionChoiceNum == DialogueUIController.main.CurrentDecision.ChoiceMade)
-                {
                     NPCManager.main.CurrentNPC.SetNextConvoNum(followUpConvo.NextConvoNum);
                     return true;
                 }
