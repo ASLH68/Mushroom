@@ -227,11 +227,17 @@ public class DialogueUIController : MonoBehaviour
         }
         
         // If the NPC is going to continue talking...
-        if (NPCManager.main.CurrentNPC.CurrentConversation.ContinueConversation)
-        {
+        //if (NPCManager.main.CurrentNPC.CurrentConversation.ContinueConversation)
+        //{
             NPCManager.main.CurrentNPC.ChangeConversation();
             DisplayDialogue();
-        }
+        //}
+        //else
+        //{
+            //NPCManager.main.CurrentNPC.ChangeConversation();
+            //DisplayDialogue();
+           // Debug.Log("not conintinued");
+        //}
     }
 
     /// <summary>

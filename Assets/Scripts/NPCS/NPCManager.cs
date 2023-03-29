@@ -59,29 +59,4 @@ public class NPCManager : MonoBehaviour
     {
         _currentNPC = npcClass;
     }
-
-    /// <summary>
-    /// Checks if both NPC have been fully talked to by the player
-    /// </summary>
-    /// <returns></returns>
-    public bool CheckNPCInteractions()
-    {
-        bool bothInteracted = true;
-        foreach (GameObject obj in NPCObjects)
-        {
-            if(!obj.GetComponentInChildren<NPCClass>().completedInteraction)
-            {
-                bothInteracted = false;
-            }
-        }
-        foreach (GameObject obj in NPCObjects2)
-        {
-            if (!obj.GetComponentInChildren<NPCClass>().completedInteraction)
-            {
-                bothInteracted = false;
-            }
-        }
-
-        return bothInteracted;
-    }
 }
