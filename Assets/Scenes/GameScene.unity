@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040912395, g: 0.0036873834, b: 0.0018427754, a: 1}
+  m_IndirectSpecularColor: {r: 0.004101143, g: 0.003698667, b: 0.0018515392, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7580,22 +7580,22 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationNum
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
-        type: 3}
-      propertyPath: _conversations.Array.data[1]._conversationNum
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
-      propertyPath: _conversations.Array.data[2]._conversationNum
+      propertyPath: _conversations.Array.data[1]._conversationNum
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationNum
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
@@ -7605,7 +7605,7 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[4]._conversationNum
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
@@ -7635,7 +7635,7 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[4]._continueConversation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
@@ -7715,48 +7715,48 @@ PrefabInstance:
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
-        type: 3}
-      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
-        type: 3}
-      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
-        type: 3}
-      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
       value: "Hey, it\u2019s nothing really. Fiona said I wasn\u2019t chipping in
         as much as I should\u2026She\u2019s the one that made me come out here!"
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
-      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
       value: "Fiona was nagging at me. Calling me lazy\u2026Can you believe it?"
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
-      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
+      propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
       value: What, come to call me lazy too?
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
-      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[0].Dialogue
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[0].Dialogue
       value: "Maybe you\u2019re right. I\u2019m sorry. "
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
-      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
       value: "You could be right\u2026"
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
-      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
+      propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[2].Dialogue
       value: "I don\u2019t want to admit it, but you might be right."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[0].Dialogue
+      value: "Yeah, I\u2019ll do just that. Thanks for your help with the situation."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
+      value: "Yeah, I suppose you\u2019re right. Thanks."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
+        type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
+      value: Yeah. Ok. Thanks, I guess.
       objectReference: {fileID: 0}
     - target: {fileID: 1286403072398531596, guid: 4be3cc9ae9226854cb055ee05ae3d5a8,
         type: 3}
@@ -27423,7 +27423,12 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[0]._conversationNum
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -27458,7 +27463,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._continueConversation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -27568,17 +27573,25 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[0].Dialogue
-      value: 
+      value: How did I think the trip went?  You know, it was pretty fun overall.
+        Especially with you here. We definitely had a few hiccups here and there
+        but all in all, I enjoyed getting to know you, and I think I want to do this
+        again sometime!
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: 
+      value: "The trip? Hmm, I mean I didn\u2019t really get to know you I feel like\u2026You
+        helped around so I appreciate that, and I think we had a good time. Maybe
+        we could do this again sometime."
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[2].Dialogue
-      value: 
+      value: "Ugh, come to taunt me one more time before we never see each other
+        again? The trip was horrible. I am tired of dealing with you\u2026Every response
+        is arrogant and passive-aggressive, and you were just awful throughout this
+        whole thing!"
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
