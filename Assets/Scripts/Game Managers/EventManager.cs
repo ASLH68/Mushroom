@@ -79,15 +79,15 @@ public class EventManager : MonoBehaviour
         _event1 = new Event(1, "harryHappy", _defaultObj,
                             "A turtle showed up at camp");
         _event14 = new Event(14, "harryHappy2", _defaultObj,
-                            "NICK PUT TEXT HERE");
-        _event2 = new Event(2, "harrySad", _defaultObj, "Harry is sad today");
-        _event15 = new Event(15, "harrySad2", _defaultObj, "NICK PUT TEXT HERE");
+                            "Harry wants to open up");
+        _event2 = new Event(2, "harrySad", _defaultObj, "Fiona talks about Harry");
+        _event15 = new Event(15, "harrySad2", _defaultObj, "Harry won't talk");
         _event3 = new Event(3, "fionaHappy", _defaultObj,
                             "You hear bird songs");
         _event16 = new Event(16, "fionaHappy2", _defaultObj,
-                    "NICK PUT TEXT HERE");
+                    "Fiona wants to take a picture");
         _event4 = new Event(4, "fionaSad", _defaultObj, "Fiona got injured");
-        _event17 = new Event(17, "fionaSad2", _defaultObj, "NICK PUT TEXT HERE");
+        _event17 = new Event(17, "fionaSad2", _defaultObj, "Fiona burns photos");
         // Nightlies
         _event5 = new Event(5, "unlitFire", _objs5,
             "The fire needs to be lit");
@@ -95,6 +95,7 @@ public class EventManager : MonoBehaviour
                             "Fiona found a skull on the ground");
         _event7 = new Event(7, "thunderstorm", _defaultObj,
                             "A thunderstorm rages");
+        _event8 = new Event(8, "Lazy Harry", _defaultObj, "Fiona calls Harry lazy");
         // Dailies
         _event10 = new Event(10, "fionaRing", _objs10,
             "Fiona has lost her ring");
@@ -104,14 +105,6 @@ public class EventManager : MonoBehaviour
                              "You wake up to find your food missing"); // "GASP!" -Sena Xenoblade
         _event13 = new Event(13, "ending", _defaultObj,
                              "You begin packing up to return home.");
-    }
-
-    /// <summary>
-    /// Update is called once per frame
-    /// </summary>
-    void Update()
-    {
-        
     }
 
     /// <summary>
@@ -135,6 +128,9 @@ public class EventManager : MonoBehaviour
                     break;
                 case 2:
                     PrepareEvent(_event7);
+                    break;
+                case 3:
+                    PrepareEvent(_event8);
                     break;
                 default:
                     PrepareEvent(_event0);
