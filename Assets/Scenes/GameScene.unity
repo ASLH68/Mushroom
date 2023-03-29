@@ -4790,17 +4790,17 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - What are you doing?
-    - Neutral Response
-    - Do not choose.
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Happy - 2 - Harry - C1
     _associatedConversation: 1
     _associatedNPC: {fileID: 662280592}
     _weight: 30
     Choices:
-    - Happy Response
+    - 
     - What do you mean?
-    - Do not choose.
+    - 
     _choiceMade: 0
   - _name: Harry Happy - 2 - Harry - C2
     _associatedConversation: 2
@@ -4808,8 +4808,8 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - Got you some food, Harry
-    - Neutral dialogue.
-    - Do not choose.
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Happy - 2 - Harry - C3
     _associatedConversation: 3
@@ -4817,8 +4817,8 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - Fiona asked you to come camping?
-    - Neutral dialogue.
-    - Do not choose.
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Happy - 2 - Harry - C4
     _associatedConversation: 4
@@ -4826,8 +4826,8 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - Do you feel better?
-    - Neutral dialogue.
-    - Do not choose.
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Happy - 2 - Harry - C5
     _associatedConversation: 5
@@ -4835,8 +4835,8 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - "I\u2019m glad I could be here, Harry."
-    - Neutral dialogue.
-    - Do not choose.
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Happy - 2 - Harry - C6
     _associatedConversation: 6
@@ -4844,8 +4844,8 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - Do you have any dreams?
-    - Neutral dialogue.
-    - Do not choose.
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Happy - 2 - Harry - C7
     _associatedConversation: 7
@@ -4854,7 +4854,7 @@ MonoBehaviour:
     Choices:
     - Do you have a favorite bug you like to draw?
     - "What\u2019s your favorite bug?"
-    - Do not choose.
+    - 
     _choiceMade: 0
   - _name: Harry Sad - 1 - Fiona - C0
     _associatedConversation: 0
@@ -4862,8 +4862,8 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - "What\u2019s the matter, Fiona?"
-    - Do not choose.
-    - Do not choose.
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Sad - 1 - Fiona - C1
     _associatedConversation: 1
@@ -4871,8 +4871,8 @@ MonoBehaviour:
     _weight: 30
     Choices:
     - "No, It\u2019s not your fault, you were only trying to help."
-    - Do not choose.
-    - Well, maybe a little bit. (Do not choose)
+    - 
+    - 
     _choiceMade: 0
   - _name: Harry Sad - 1 - Fiona - C2
     _associatedConversation: 2
@@ -4881,25 +4881,25 @@ MonoBehaviour:
     Choices:
     - "Yeah, I\u2019ll do my best."
     - "We\u2019ll see what happens."
-    - "Can\u2019t say I can\u2026 (Do not choose)"
+    - 
     _choiceMade: 0
   - _name: Harry Sad - 1 - Fiona - C3
     _associatedConversation: 3
     _associatedNPC: {fileID: 1980236330}
     _weight: 30
     Choices:
-    - Happy response.
+    - 
     - Could you tell me a little about Harry?
-    - Do not choose.
+    - 
     _choiceMade: 0
   - _name: Harry Sad - 1 - Fiona - C4
     _associatedConversation: 4
     _associatedNPC: {fileID: 1980236330}
     _weight: 30
     Choices:
-    - Happy response.
+    - 
     - "What are Harry\u2019s interests?"
-    - Do not choose.
+    - 
     _choiceMade: 0
   - _name: Fiona Happy - 1 - Fiona - C0
     _associatedConversation: 0
@@ -10963,18 +10963,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.14
+      value: -14.52
       objectReference: {fileID: 0}
     - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.35
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.13
+      value: -15.09
       objectReference: {fileID: 0}
     - target: {fileID: 1650971632030136626, guid: c7c4381525d061247a85fb63525e4ecb,
         type: 3}
@@ -33310,7 +33325,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[3]._continueConversation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -33340,7 +33355,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: 
+      value: I got hurt while running.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -33355,7 +33370,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
-      value: 
+      value: I try to be careful, I try to make things work.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -33364,8 +33379,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
+      value: But this camping trip is falling apart, me included...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
       value: But this camping trip is falling apart, me included...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[1].Dialogue
+      value: Just leave me alone.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -34081,7 +34106,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[0]._conversationDialogues.Array.data[1].Dialogue
-      value: 
+      value: This trip has cemented just how hopeless these camping trips have been.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -34096,7 +34121,7 @@ PrefabInstance:
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
       propertyPath: _conversations.Array.data[1]._conversationDialogues.Array.data[1].Dialogue
-      value: 
+      value: The trips started out great...
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -34105,8 +34130,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[1].Dialogue
+      value: But year after year, people left...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[2]._conversationDialogues.Array.data[2].Dialogue
       value: But year after year, people left...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[3]._conversationDialogues.Array.data[1].Dialogue
+      value: Until it was just me.
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -34115,8 +34150,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.data[1].Dialogue
+      value: So I had to look for new people to camp with.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[4]._conversationDialogues.Array.data[2].Dialogue
       value: So I had to look for new people to camp with.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[5]._conversationDialogues.Array.data[1].Dialogue
+      value: But you two can't replace what I had...
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -34125,13 +34170,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[6]._conversationDialogues.Array.data[1].Dialogue
+      value: I should have realized I was just holding onto false dreams,
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[6]._conversationDialogues.Array.data[2].Dialogue
       value: I should have realized I was just holding onto false dreams,
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
+      propertyPath: _conversations.Array.data[7]._conversationDialogues.Array.data[1].Dialogue
+      value: I wanted to wait for my uncle to get out of the hospital!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
       propertyPath: _conversations.Array.data[7]._conversationDialogues.Array.data[2].Dialogue
       value: I wanted to wait for my uncle to get out of the hospital!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
+        type: 3}
+      propertyPath: _conversations.Array.data[8]._conversationDialogues.Array.data[1].Dialogue
+      value: But he keeps telling me he will get better, but he keeps getting worse...
       objectReference: {fileID: 0}
     - target: {fileID: 3679987854280132448, guid: 134f6f10211a223498e54568ed3194d0,
         type: 3}
@@ -44403,6 +44463,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2691019821978246805, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691019821978246805, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2691019821978246805, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.26
       objectReference: {fileID: 0}
@@ -44414,7 +44484,7 @@ PrefabInstance:
     - target: {fileID: 2691019821978246805, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.23
+      value: -7.16
       objectReference: {fileID: 0}
     - target: {fileID: 2691019821978246805, guid: 4f3b8dc15bf402b45a90fcb6b5c50639,
         type: 3}
@@ -44712,6 +44782,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936099808289436803, guid: d032c84a7993c374587090466c23f27e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936099808289436803, guid: d032c84a7993c374587090466c23f27e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936099808289436803, guid: d032c84a7993c374587090466c23f27e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3936099808289436803, guid: d032c84a7993c374587090466c23f27e,
         type: 3}
@@ -45326,13 +45411,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6098514876995659988, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6098514876995659988, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.11
       objectReference: {fileID: 0}
     - target: {fileID: 6098514876995659988, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.35
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6098514876995659988, guid: 0b4cc1f7867dd844e8be6f55b41f1de3,
         type: 3}

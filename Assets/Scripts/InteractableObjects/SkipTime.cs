@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using StarterAssets;
+using UnityEngine.SceneManagement;
 
 public class SkipTime : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class SkipTime : MonoBehaviour
     [SerializeField] GameObject _alertOptions;
     Vector3 _playerPos;
     Vector3 _lastPos;
+    private int daysGone;
+    private bool getDone;
     //public bool useable = false;
 
     // Start is called before the first frame update
@@ -41,9 +44,14 @@ public class SkipTime : MonoBehaviour
         if (GetComponent<SphereCollider>().bounds.Contains(_playerPos))
         {
             // Activates Pop Up
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) && !getDone && Cursor.lockState ==  CursorLockMode.Locked)
             {
-                
+                getDone = true;
+                Debug.Log(daysGone);
+                if(daysGone == 8)
+                {
+                    SceneManager.LoadScene(2);
+                }
                 _buttonIcon.SetActive(false);
                 /*if(!NPCManager.main.CheckNPCInteractions())
                 {
@@ -71,6 +79,7 @@ public class SkipTime : MonoBehaviour
         }
 
         _lastPos = _playerPos;
+        //getDone = false;
     }
 
     /// <summary>
@@ -114,6 +123,8 @@ public class SkipTime : MonoBehaviour
         _warning.SetActive(false);
         _alertOptions.SetActive(false);
         FirstPersonController.main.IsControllable = true;
+        daysGone++;
+        getDone = false;
     }
 
     public void NoToAlert()
@@ -125,5 +136,6 @@ public class SkipTime : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        getDone = false;
     }
 }
