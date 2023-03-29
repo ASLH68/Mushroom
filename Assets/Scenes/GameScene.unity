@@ -4739,16 +4739,6 @@ MonoBehaviour:
     - I wonder where the turtle is
     - "I couldn\u2019t care about a stupid turtle"
     _choiceMade: 0
-  - _name: Harry Happy - 1 - Fiona - C1
-    _associatedConversation: 1
-    _associatedNPC: {fileID: 299292173}
-    _weight: 30
-    Choices:
-    - Harry will share it eventually
-    - "I think you\u2019ll have to pry the turtle away from Harry if you want any
-      time with it"
-    - "You\u2019re gonna be too slow, the turtle will be gone before you know it"
-    _choiceMade: 0
   - _name: Harry Happy - 1 - Harry - C0
     _associatedConversation: 0
     _associatedNPC: {fileID: 1554068880}
