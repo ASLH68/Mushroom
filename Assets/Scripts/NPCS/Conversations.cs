@@ -42,10 +42,6 @@ public class Conversations
                             NPCManager.main.CurrentNPC.SetNextConvoNum(followUpConvo.NextConvoNum);
                             return true;
                         }
-                        else
-                        {
-                            return false;
-                        }
                     }
                     NPCManager.main.CurrentNPC.SetNextConvoNum(followUpConvo.NextConvoNum);
                     return true;
