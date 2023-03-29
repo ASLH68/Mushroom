@@ -178,6 +178,12 @@ public class EventManager : MonoBehaviour
                 eventPool.Add(_event17);
             }
 
+            // This prevents any more emotional events happening after night 4
+            if(_event8.HasPlayed)
+            {
+                eventPool.Clear();
+            }
+
             // Chooses between potential events, or triggers a default event
             // if there are none
             if (eventPool.Count == 0)
@@ -192,6 +198,9 @@ public class EventManager : MonoBehaviour
                         break;
                     case 2:
                         PrepareEvent(_event12);
+                        break;
+                    case 3:
+                        PrepareEvent(_event13);
                         break;
                     default:
                         PrepareEvent(_event0);
